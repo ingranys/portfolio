@@ -1,0 +1,55 @@
+.home{
+    height: 100vh;
+    width: 100vw
+}
+
+
+@media only screen and (min-width: 600px) {
+
+    .parent{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+
+    .page-wrapper{
+        height: 100%;
+        width: 100%;
+        position: absolute;    
+        top: 0;
+        left: 0;
+    }
+
+    .page-wrapper.left{
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .page-wrapper.right{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .presentation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .particles{
+        width: 70%;
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .particles{
+        height: 50vh;
+    }
+    
+    .home .page-wrapper.left{
+        position: absolute;
+        top: 10%;
+    }
+}

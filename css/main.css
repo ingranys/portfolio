@@ -30,17 +30,6 @@ body{
     overflow-x: hidden;
 }
 
-header{
-    position: fixed;
-    width: 100vw;
-
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 3vh;
-    padding-right: 3.5vw;
-    
-}
-
 a {
     color: inherit;
 }
