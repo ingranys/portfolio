@@ -8,28 +8,40 @@
 }
 
 :root{
-    --dark-color: #131313;
-    /*--dark-color: #353535;*/
-    /*--dark-color: #252934;*/
-    --light-color: #ffffff;
-    --primary-color1: #04c2c9;
-    --primary-color2: #e31b6d;
+    /*main theme*/
+    --main-bg-color: #1F242E;
+    --main-text-color: #ffffff;
+    --main-primary-color: #20DFDF;
+    --main-secondary-color: #DF209F;
+    --main-tertiary-color: #DF9E20;
+    --main-quatenry-color: #20DF7F;
+    /*menu theme*/
+    --menu-bg-color: #430A30;
+    --menu-text-color: #FFFFFF;
+    --menu-primary-color: #861360;
+    --menu-secondary-color: #633654;
 }
 
 body{
-    background: var(--dark-color);
-    color: var(--light-color);
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
 }
 
 header{
+    position: fixed;
     width: 100vw;
-    padding: 0 1.5rem;
+
     display: flex;
     justify-content: right;
-    position: fixed;
+    padding-top: 3vh;
+    padding-right: 3.5vw;
+    
+}
+
+a {
+    color: inherit;
 }
 
 .btn-contact:after{

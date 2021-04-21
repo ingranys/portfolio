@@ -3,27 +3,36 @@
 MENU PAGE
 #######################################################
 */
+
+/*==== overlay menu ====*/
 .menu{
     top: -100vh;
     width: 100vw;
     position: fixed;
-    background-color: hsl(260, 75%, 5%);
+    background-color: var(--menu-bg-color);
+    color: var(--menu-primary-color);   
+    font-style: normal;
+    font-weight: 400;
     transition: 0.5s cubic-bezier(0,.75,.33,.98);
 }
 
 .menu.active{
     top: 0vh;
 }
+/*----------------------*/
 
+/*==== menu wrapper ====*/
 .menu-page{
     min-height: 100vh;
     overflow: hidden;
     position: relative;
     display:flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center; 
 }
+/*----------------------*/
 
+/*==== menu items ====*/
 .menu-content li{
     margin: 1rem 0;
     text-align: center;
@@ -32,13 +41,14 @@ MENU PAGE
 
 .menu-content a{
     display: block;
-    color: hsl(260, 50%, 30%);
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 0.1ch;    
     line-height: 1.2em;   
 }
+/*----------------------*/
 
+/*==== menu items/ text reveal ====*/
 .menu.active a{
     animation: reveal 0.5s;
     animation-fill-mode: backwards;  
@@ -57,9 +67,12 @@ MENU PAGE
         transform: translateY(0%);
     }    
 }
+/*----------------------*/
 
+
+/*==== menu items/ over effect ====*/
 .menu-content a:hover{
-    color: var(--light-color);
+    color: var(--menu-text-color);
 }
 
 .menu-content a:before{
@@ -73,9 +86,12 @@ MENU PAGE
     left:50%;  
     transform: translateX(-50%);
 
+    font-style: italic;
+    font-weight: 800;
+
     z-index: -1;
     opacity: 0;
-    color: hsl(260, 30%, 50%);;
+    color:var(--menu-secondary-color);
 
     transition: 0.3s ease-in;
 }
@@ -84,19 +100,54 @@ MENU PAGE
     opacity: 1;
     letter-spacing: 0.2ch;
 }
+/*----------------------*/
 
-.socials{
-    position:absolute;
-    right: 2rem;;
-    bottom: 2rem;
-    width: 300px;
-    height: 50px;
-    background-color: brown ;
+/*==== menu social icons ====*/
+.menu-socials{
+    display: flex;
+    justify-content: flex-end; 
+
+    position: absolute;
+    bottom: 5vh;
+    right: 5vw;
 }
 
+.menu-socials svg{
+    position: relative;
+    width:30px;
+    margin: 0 15px;
+    transition: 0.5s;   
+}
+
+.menu-socials svg:hover{
+    color: var(--menu-text-color);       
+    transition: 0.5s cubic-bezier(.06,.66,.39,1.6);
+}
+/*----------------------*/
 
 
+/*==== menu social / entrance effect ====*/
+.menu.active .menu-socials svg{
+    /*entrance*/
+   animation: scale 0.5s;
+   animation-fill-mode: backwards;
+}
 
+.menu.active .menu-socials svg:nth-child(1) { animation-delay: 1.0s;}
+.menu.active .menu-socials svg:nth-child(2) { animation-delay: 1.15s;}
+.menu.active .menu-socials svg:nth-child(3) { animation-delay: 1.30s;}
+
+
+@keyframes scale {
+   from {
+       opacity: 0;
+       transform: scale(0.1);
+   }
+   to {
+       transform: scale(1);
+   }    
+}
+/*----------------------*/
 
 
 /*
@@ -104,39 +155,52 @@ MENU PAGE
 MENU TOGGLE
 #######################################################
 */
+
+/*==== menu toggle ====*/
 .menu-toggle{
-    width: 5rem;
-    height: 5rem;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
-    background-color: transparent;
-
-    border-radius: 50%;
+    justify-content: center;   
 
     z-index: 10;
 }
-
-.menu-toggle:hover{
-    background-color: hsl(260, 50%, 30%);;
-}
-
-.menu-toggle.active{
-    border-style: none;
-    transition: all 0.5s ease;
-}
-
 
 .menu-bar{
     width: 4rem;
     height: 0.3rem;
     border-radius: 0.15rem;
-    background:var(--light-color);
     position : relative;
     transform-origin: center;
+}
+/*----------------------*/
+
+
+/*==== menu toggle colors ====*/
+.menu-toggle:not(.active) .menu-bar{
+    background-color: var(--main-text-color);
+}
+
+.menu-toggle.active .menu-bar{
+    background-color: var(--menu-primary-color);
+}
+
+.menu-toggle:not(.active):hover .menu-bar{
+    background-color: var(--menu-primary-color);
+}
+
+.menu-toggle.active:hover .menu-bar{
+    background-color: var(--menu-text-color);
+}
+/*----------------------*/
+
+/*==== menu toggle animation ====*/
+.menu-bar{
+    /*speed*/
     transition: all 0.5s ease;
 }
 
@@ -158,3 +222,4 @@ MENU TOGGLE
     opacity: 0; 
     transform: translate(-3rem,0px);
 }
+/*----------------------*/
