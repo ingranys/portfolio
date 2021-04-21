@@ -4,6 +4,7 @@
     list-style: none;
     border-style: none;
     text-decoration: none;
+    outline: none;
     box-sizing: border-box;
 }
 
@@ -34,7 +35,7 @@ header{
     width: 100vw;
 
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     padding-top: 3vh;
     padding-right: 3.5vw;
     
