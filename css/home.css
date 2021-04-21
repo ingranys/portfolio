@@ -1,6 +1,56 @@
 .home{
     height: 100vh;
-    width: 100vw
+    width: 100vw;
+    font-style: normal;
+}
+
+.home .page-wrapper.left{
+    z-index: 1;
+}
+
+.home h1{
+    font-weight: 600;
+    font-size: 4rem;
+    padding: 0 0 1rem 1rem;
+}
+
+.home h1 span{
+    color: var(--main-primary-color);
+    position: relative;
+
+}
+
+.home h1 span:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 8px;   
+    background: var(--main-primary-color);
+    right: 0;
+    width: 0;
+    transition: width .3s ease-in-out;
+}
+
+.home h1 span:hover:after{
+    left: 0;
+    width: 100%;
+}
+
+.home h2{
+    font-weight: 800;
+    font-size: 3rem;
+    padding: 0 0 0 1rem;
+    /*https://css-tricks.com/adding-stroke-to-web-text/*/
+    color: var(--main-bg-color);
+    text-shadow:
+    calc(-1*var(--home-stroke-size)) calc(-1*var(--home-stroke-size)) 0 var(--main-text-color),  
+    var(--home-stroke-size) calc(-1*var(--home-stroke-size)) 0 var(--main-text-color),
+    calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--main-text-color),
+    var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
+}
+
+.particles{
+    background-color: hsl(219, 20%, 19%);
 }
 
 

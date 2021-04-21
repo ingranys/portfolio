@@ -21,6 +21,8 @@
     --menu-text-color: #FFFFFF;
     --menu-primary-color: #861360;
     --menu-secondary-color: #633654;
+    /*stroke size*/
+    --home-stroke-size: 1.5px;
 }
 
 body{
