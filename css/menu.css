@@ -8,11 +8,29 @@ header{
     width: 100vw;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-top: 3vh;
     padding-right: 3.5vw;  
 
-    z-index: 100;
+    z-index:100;
+}
+
+
+/*
+#######################################################
+MENU LOGO
+#######################################################
+*/
+.logo svg{
+    width: 4rem;
+    height: 4rem;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+.logo.active svg{
+    visibility: hidden;
+    transition-delay: 0.0s;
 }
 
 
@@ -184,7 +202,7 @@ MENU TOGGLE
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .menu-bar{
@@ -208,7 +226,7 @@ MENU TOGGLE
 
 @media(hover: hover) and (pointer: fine) {
     .menu-toggle:not(.active):hover .menu-bar{
-        background-color: var(--menu-primary-color);
+        background-color: var(--main-secondary-color);
     }
 
     .menu-toggle.active:hover .menu-bar{

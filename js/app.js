@@ -1,10 +1,12 @@
 /* toggle menu */
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
+const logo = document.querySelector('.logo');
 
 toggle.addEventListener('click', () => {
   toggle.classList.toggle('active');
-    menu.classList.toggle('active');
+  menu.classList.toggle('active');
+  logo.classList.toggle('active');
 })
 
 
@@ -21,6 +23,11 @@ const convertImages = (query, callback) => {
   
         if (image.id) svg.id = image.id;
         if (image.className) svg.classList = image.classList;
+        if (image.title) {
+          var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+          title.textContent = image.title;
+          svg.appendChild(title);
+        }
   
         image.parentNode.replaceChild(svg, image);
       })
@@ -32,7 +39,31 @@ const convertImages = (query, callback) => {
 convertImages('img');
 
 
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+/* particles.JS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load('particles', 'config/particles.json', function() {
   console.log('Particles.js configuration loaded.');
 });
+
+
+/* typed.js */
+
+var typedOptions = document.getElementById('typed-options');
+var elementTypeSpeed = typedOptions.getAttribute('type-speed');
+var elementBackSpeed = typedOptions.getAttribute('back-speed');
+var elementStartDelay = typedOptions.getAttribute('start-delay');
+var elementBackDelay = typedOptions.getAttribute('back-delay');
+
+var typed = new Typed('#typed', {
+  //strings: [  "Identity Management Specialist",
+  //            "Machine Learning Enthusiast",
+  //            "Self-Taught Web Developer"],
+  stringsElement: '#typed-strings',
+  typeSpeed: parseInt(elementTypeSpeed),
+  backSpeed: parseInt(elementBackSpeed),  
+  startDelay: parseInt(elementStartDelay),
+  backDelay: parseInt(elementBackDelay),
+  showCursor: false,
+  loop: true
+});
+
+

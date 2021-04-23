@@ -36,6 +36,24 @@ BASIC
     calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--main-text-color),
     var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
 }
+
+.home h2::after {
+    content: "";
+    border-right: 0.1em solid var(--main-secondary-color);
+    position: relative;
+    left: 3px;
+    animation: cursorBlink 0.7s infinite;
+}
+
+@keyframes cursorBlink {
+    from {       
+        opacity: 0;       
+    }
+    to {
+        opacity: 1;
+    }    
+}
+
 /*----------------------*/
 
 
