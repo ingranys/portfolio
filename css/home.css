@@ -2,10 +2,7 @@
     height: 100vh;
     width: 100vw;
     font-style: normal;
-}
-
-.home .page-wrapper.left{
-    z-index: 1;
+    pointer-events: none;
 }
 
 .home h1{
@@ -49,8 +46,8 @@
     var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
 }
 
-.particles{
-    background-color: hsl(219, 20%, 19%);
+.particles, .home h1 span{
+    pointer-events: all;
 }
 
 

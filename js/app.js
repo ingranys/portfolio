@@ -1,11 +1,14 @@
-const burger = document.querySelector('.menu-toggle');
+/* toggle menu */
+const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
 
-burger.addEventListener('click', () => {
-    burger.classList.toggle('active');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
     menu.classList.toggle('active');
 })
 
+
+/* convert svg files to inline html */
 const convertImages = (query, callback) => {
     const images = document.querySelectorAll(query);
   
@@ -27,3 +30,9 @@ const convertImages = (query, callback) => {
 }
   
 convertImages('img');
+
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load('particles-js', 'config/particles.json', function() {
+  console.log('Particles.js configuration loaded.');
+});

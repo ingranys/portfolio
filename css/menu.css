@@ -24,7 +24,7 @@ MENU PAGE
 
 /*==== overlay menu ====*/
 .menu{
-    top: -100vh;
+    transform : translateY(-100%);
     width: 100vw;
     position: fixed;
     background-color: var(--menu-bg-color);
@@ -36,7 +36,7 @@ MENU PAGE
 }
 
 .menu.active{
-    top: 0vh;
+    transform : translateY(0%);
 }
 /*----------------------*/
 
