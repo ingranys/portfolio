@@ -1,3 +1,10 @@
+/*
+#######################################################
+BASIC
+#######################################################
+*/
+
+/*==== fonts ====*/
 .home{
     height: 100vh;
     width: 100vw;
@@ -11,26 +18,10 @@
     padding: 0 0 1rem 1rem;
 }
 
-.home h1 span{
+.home h1 span:last-child{
     color: var(--main-primary-color);
     position: relative;
 
-}
-
-.home h1 span:after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    height: 8px;   
-    background: var(--main-primary-color);
-    right: 0;
-    width: 0;
-    transition: width .3s ease-in-out;
-}
-
-.home h1 span:hover:after{
-    left: 0;
-    width: 100%;
 }
 
 .home h2{
@@ -45,12 +36,70 @@
     calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--main-text-color),
     var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
 }
+/*----------------------*/
 
-.particles, .home h1 span{
-    pointer-events: all;
+
+/*==== text reveal ====*/
+.home h1{
+    overflow: hidden;
 }
 
+.home h1 span{
+    display: inline-block;
+    animation: revealPresentation 0.3s;
+    animation-fill-mode: backwards;
+}
 
+.home h1 span:nth-child(1){ animation-delay: 0.10s; }
+.home h1 span:nth-child(2){ animation-delay: 0.20s; }
+.home h1 span:nth-child(3){ animation-delay: 0.30s; }
+
+@keyframes revealPresentation {
+    from {       
+        transform: translateY(150%);       
+    }
+    to {
+        transform: translateY(0%);
+    }    
+}
+/*----------------------*/
+
+
+/*==== underline effect ====*/
+#firstname:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    height: 8px;   
+    background: var(--main-primary-color);
+    right: 0;
+    width: 0;
+    transition: width .3s ease-in-out;
+}
+
+#firstname:hover:after{
+    left: 0;
+    width: 100%;
+}
+/*----------------------*/
+
+
+/*==== adjust pointer ====*/
+.home {
+    pointer-events: none;
+}
+
+#particles, #firstname{
+    pointer-events: all;
+}
+/*----------------------*/
+
+
+/*
+#######################################################
+LARGE SCREENS
+#######################################################
+*/
 @media only screen and (min-width: 600px) {
 
     .parent{
@@ -84,19 +133,24 @@
         justify-content: center;
     }
 
-    .particles{
+    #particles{
         width: 70%;
-        height: 70%;
+        height: 80%;
     }
 }
 
+/*
+#######################################################
+SMALL SCREENS
+#######################################################
+*/
 @media only screen and (max-width: 600px) {
-    .particles{
-        height: 50vh;
+    #particles{
+        height: 100vh;
     }
     
     .home .page-wrapper.left{
-        position: absolute;
-        top: 10%;
+        position: relative;
+        top: -70vh;
     }
 }

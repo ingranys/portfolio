@@ -33,6 +33,6 @@ convertImages('img');
 
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles-js', 'config/particles.json', function() {
+particlesJS.load('particles', 'config/particles.json', function() {
   console.log('Particles.js configuration loaded.');
 });
