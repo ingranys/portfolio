@@ -48,9 +48,20 @@ convertImages('img');
 
 
 /* particles.JS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load('particles', 'config/particles.json', function() {
-  console.log('Particles.js configuration loaded.');
-});
+var loadParticles = function(event) {
+  if (window.innerWidth > 600)  {
+    particlesJS.load('particles', 'config/particles-large.json', function() {
+      console.log('Particles.js configuration loaded.');
+    });  
+  } else {
+    particlesJS.load('particles', 'config/particles-small.json', function() {
+      console.log('Particles.js configuration loaded.');
+    }); 
+  }
+};  
+
+window.onresize = loadParticles;
+window.onload = loadParticles;
 
 
 /* typed.js */
