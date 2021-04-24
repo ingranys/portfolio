@@ -18,8 +18,8 @@
     --main-quatenry-color: #20DF7F;
     --main-padding-left: 1rem;
     /*header theme */
-    --header-padding-top : 1vh;
-    --header-padding-right : 1vw;
+    --header-padding-top : 1rem;
+    --header-padding-right : 2rem;
     --header-element-size: 5rem;
     --header-toggle-speed: 0.5s;
     --header-bar-ratio: 0.05;
@@ -40,6 +40,11 @@
     --menu-bar-width: 1px;
     /*home theme*/
     --home-stroke-size: 1.5px;
+    --home-cursor-period: 0.7s;
+    --home-reveal-duration: 0.3s;
+    --home-reveal-delay: 0.1s;
+    --home-underline-duration: 0.3s;
+
 }
 
 html{

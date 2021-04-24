@@ -3,8 +3,7 @@
 BASIC
 #######################################################
 */
-
-/*==== fonts ====*/
+/*==== style ====*/
 .home{
     height: 100vh;
     width: 100vw;
@@ -14,20 +13,22 @@ BASIC
 
 .home h1{
     font-weight: 600;
-    font-size: 4rem;
-    padding: 0 0 1rem 1rem;
+    font-size: 6rem;
+    padding-bottom: 1.5rem;
+}
+
+.home h1, .home h2{
+    padding-left: 2rem;
 }
 
 .home h1 span:last-child{
     color: var(--main-primary-color);
     position: relative;
-
 }
 
 .home h2{
     font-weight: 800;
-    font-size: 3rem;
-    padding: 0 0 0 1rem;
+    font-size: 5rem;
     width: min(35ch,90vw);
     /*https://css-tricks.com/adding-stroke-to-web-text/*/
     color: var(--main-bg-color);
@@ -37,13 +38,15 @@ BASIC
     calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--main-text-color),
     var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
 }
+/*----------------------*/
 
+/*==== cursor ====*/
 .home h2::after {
     content: "";
-    border-right: 0.1em solid var(--main-secondary-color);
+    border-right: 0.5rem solid var(--main-secondary-color);
     position: relative;
-    left: 3px;
-    animation: cursorBlink 0.7s infinite;
+    left: 0.3rem;
+    animation: cursorBlink var(--home-cursor-period) infinite;
 }
 
 @keyframes cursorBlink {
@@ -54,9 +57,7 @@ BASIC
         opacity: 1;
     }    
 }
-
 /*----------------------*/
-
 
 /*==== text reveal ====*/
 .home h1{
@@ -65,13 +66,19 @@ BASIC
 
 .home h1 span{
     display: inline-block;
-    animation: revealPresentation 0.3s;
+    animation: revealPresentation var(--home-reveal-duration);
     animation-fill-mode: backwards;
 }
 
-.home h1 span:nth-child(1){ animation-delay: 0.10s; }
-.home h1 span:nth-child(2){ animation-delay: 0.20s; }
-.home h1 span:nth-child(3){ animation-delay: 0.30s; }
+.home h1 span:nth-child(1){ 
+    animation-delay: calc(1 * var(--home-reveal-delay)); 
+}
+.home h1 span:nth-child(2){ 
+    animation-delay: calc(2 * var(--home-reveal-delay)); 
+}
+.home h1 span:nth-child(3){ 
+    animation-delay: calc(3 * var(--home-reveal-delay));
+}
 
 @keyframes revealPresentation {
     from {       
@@ -83,17 +90,16 @@ BASIC
 }
 /*----------------------*/
 
-
 /*==== underline effect ====*/
 #firstname:after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    height: 8px;   
+    bottom: -1rem;
+    height: 0.7rem;   
     background: var(--main-primary-color);
     right: 0;
     width: 0;
-    transition: width .3s ease-in-out;
+    transition: width var(--home-underline-duration) ease-in-out;
 }
 
 #firstname:hover:after{
@@ -101,7 +107,6 @@ BASIC
     width: 100%;
 }
 /*----------------------*/
-
 
 /*==== adjust pointer ====*/
 .home {
@@ -113,10 +118,11 @@ BASIC
 }
 /*----------------------*/
 
-
+/*
 .btn-contact:after{
     content: "\F054";
 }
+*/
 
 
 /*
@@ -125,7 +131,6 @@ LARGE SCREENS
 #######################################################
 */
 @media only screen and (min-width: 600px) {
-
     .page-wrapper{
         height: 100%;
         width: 100%;
@@ -152,10 +157,11 @@ LARGE SCREENS
     }
 
     #particles{
-        width: 70%;
-        height: 80%;
+        width: 70%; 
+        height: calc(1 * (100vh - 2 * calc(var(--header-padding-top) + var(--header-element-size))));
     }
 }
+
 
 /*
 #######################################################
@@ -168,11 +174,13 @@ SMALL SCREENS
         top: -50%;
     }
 
+    .presentation{
+        height: 0;
+    }
+
     #particles{
-        height: calc(100vh - 5rem);
+        height: calc(100vh - calc(var(--header-padding-top) + var(--header-element-size)));
         position: relative;
         top: 5rem;
     }
-    
-
 }
