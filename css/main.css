@@ -19,11 +19,11 @@
     --main-padding-left: 1rem;
     /*header theme */
     --header-padding-top : 1vh;
-    --header-padding-right : 3.5vw;
+    --header-padding-right : 1vw;
     --header-element-size: 5rem;
     --header-toggle-speed: 0.5s;
-    --header-bar-ratio: 0.1;
-    --header-bar-space: 1;
+    --header-bar-ratio: 0.05;
+    --header-bar-space: 3;
     --header-bar-height: calc(var(--header-bar-ratio) * var(--header-element-size));
     /*menu theme*/
     --menu-bg-color: #430A30;
