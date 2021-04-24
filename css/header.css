@@ -13,7 +13,7 @@ HEADER
     padding-right: var(--header-padding-right);  
 
     background-color: var(--main-bg-color) ;
-    transition-delay: 0.3s;
+    transition-delay: calc(0.8 * var(--menu-reveal-duration));
 
     z-index:100;
 }
@@ -36,7 +36,7 @@ HEADER LOGO
 
 .logo svg{
     visibility: visible;
-    transition-delay: 0.3s;
+    transition-delay: calc(0.8 * var(--menu-reveal-duration));
 }
 
 .header.active .logo svg{
