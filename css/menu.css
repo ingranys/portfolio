@@ -64,6 +64,7 @@ MENU PAGE
     overflow: hidden;
     position: relative;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center; 
 }
@@ -140,15 +141,6 @@ MENU PAGE
 /*----------------------*/
 
 /*==== menu social icons ====*/
-.menu-socials{
-    display: flex;
-    justify-content: flex-end; 
-
-    position: absolute;
-    bottom: 5vh;
-    right: 5vw;
-}
-
 .menu-socials svg{
     position: relative;
     width:30px;
@@ -166,16 +158,16 @@ MENU PAGE
 /*==== menu social / entrance effect ====*/
 .menu.active .menu-socials svg{
     /*entrance*/
-   animation: scale 0.5s;
+   animation: scaleEntrance 0.5s;
    animation-fill-mode: backwards;
 }
 
-.menu.active .menu-socials svg:nth-child(1) { animation-delay: 1.0s;}
-.menu.active .menu-socials svg:nth-child(2) { animation-delay: 1.15s;}
-.menu.active .menu-socials svg:nth-child(3) { animation-delay: 1.30s;}
+.menu.active .menu-socials svg:nth-child(1) { animation-delay: 2.0s;}
+.menu.active .menu-socials svg:nth-child(2) { animation-delay: 2.15s;}
+.menu.active .menu-socials svg:nth-child(3) { animation-delay: 2.30s;}
 
 
-@keyframes scale {
+@keyframes scaleEntrance {
    from {
        opacity: 0;
        transform: scale(0.1);
@@ -186,6 +178,54 @@ MENU PAGE
 }
 /*----------------------*/
 
+
+/*==== menu social / responsive layout ====*/
+@media only screen and (min-width: 600px) {  
+    .menu-socials{
+        display: flex;
+        justify-content: flex-end; 
+    
+        position: absolute;
+        bottom: 5vh;
+        right: 5vw;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {    
+    .menu-socials{
+        display: flex;
+        justify-content: flex-end; 
+        margin-top: 2rem;        
+        padding-top: 1.2rem;
+        position: relative;
+        left: 3px;   
+        
+        border-top: 1px solid var(--menu-primary-color) ;
+    }
+
+    .menu.active .menu-socials{
+        /*entrance*/
+       animation: borderEntrance 0.1s;
+       animation-delay: 2s;
+       animation-fill-mode: backwards;
+    }
+
+    @keyframes borderEntrance {
+        from {
+            border-top: 1px solid var(--menu-bg-color) ;
+        }
+        to {
+            border-top: 1px solid var(--menu-primary-color) ;
+        }    
+     }
+
+
+
+
+
+}
+/*----------------------*/
 
 /*
 #######################################################
