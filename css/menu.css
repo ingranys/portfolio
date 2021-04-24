@@ -3,7 +3,6 @@
 MENU PAGE
 #######################################################
 */
-
 /*==== overlay menu effect ====*/
 .menu{
     transform : translateY(-100%);
@@ -79,7 +78,6 @@ MENU PAGE
 }
 /*----------------------*/
 
-
 /*==== menu items/ over effect ====*/
 .menu-content a:hover{
     color: var(--menu-text-color);
@@ -111,7 +109,6 @@ MENU PAGE
     letter-spacing: 0.2ch;
 }
 /*----------------------*/
-
 
 /*==== menu content / small screens ====*/
 @media only screen and (max-width: 600px) {      
@@ -149,7 +146,6 @@ MENU SOCIALS
 }
 /*----------------------*/
 
-
 /*==== menu socials / entrance effect ====*/
 .menu.active .menu-socials svg{
     /*entrance*/
@@ -167,7 +163,6 @@ MENU SOCIALS
      animation-delay: calc(var(--menu-scale-offset) + calc(3 * var(--menu-scale-delay)));
 }
 
-
 @keyframes scaleEntrance {
    from {
        opacity: 0;
@@ -178,7 +173,6 @@ MENU SOCIALS
    }    
 }
 /*----------------------*/
-
 
 /*==== menu socials / large screens ====*/
 @media only screen and (min-width: 600px) {  
@@ -192,7 +186,6 @@ MENU SOCIALS
     }
 }
 /*----------------------*/
-
 
 /*==== menu socials / small screens ====*/
 @media only screen and (max-width: 600px) {    

@@ -37,6 +37,7 @@
     --menu-scale-offset: 2.0s;
     --menu-scale-delay: 0.15s;    
     --menu-hover-duration: 0.3s;
+    --menu-bar-width: 1px;
     /*home theme*/
     --home-stroke-size: 1.5px;
 }
