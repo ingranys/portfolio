@@ -46,7 +46,6 @@ particlesJS.load('particles', 'config/particles.json', function() {
 
 
 /* typed.js */
-
 var typedOptions = document.getElementById('typed-options');
 var elementTypeSpeed = typedOptions.getAttribute('type-speed');
 var elementBackSpeed = typedOptions.getAttribute('back-speed');
@@ -63,7 +62,8 @@ var typed = new Typed('#typed', {
   startDelay: parseInt(elementStartDelay),
   backDelay: parseInt(elementBackDelay),
   showCursor: false,
-  loop: true
+  loop: true,
+  onBegin: (self) => {console.log("Typed.js configuration loaded.")},
 });
 
 
