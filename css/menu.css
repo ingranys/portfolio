@@ -13,7 +13,7 @@ MENU PAGE
     color: var(--menu-primary-color);   
     font-style: normal;
     font-weight: 400;
-    transition: 0.5s;
+    transition: var(--menu-overlay-duration);
     z-index: 100;
 }
 
@@ -36,30 +36,38 @@ MENU PAGE
 
 /*==== menu items ====*/
 .menu-content li{
-    margin: 1rem 0;
+    margin: 2rem 0;
     text-align: center;
     overflow: hidden;
 }
 
 .menu-content a{
     display: block;
-    font-size: 3rem;
+    font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 0.1ch;    
-    line-height: 1.2em;   
+    line-height: 1.5em;   
 }
 /*----------------------*/
 
 /*==== menu items/ text reveal ====*/
 .menu.active a{
-    animation: revealItem 0.5s;
+    animation: revealItem var(--menu-reveal-duration);
     animation-fill-mode: backwards;  
 }
 
-.menu.active li:nth-child(1) a{ animation-delay: 0.5s; }
-.menu.active li:nth-child(2) a{ animation-delay: 0.75s; }
-.menu.active li:nth-child(3) a{ animation-delay: 1.0s; }
-.menu.active li:nth-child(4) a{ animation-delay: 1.25s; }
+.menu.active li:nth-child(1) a{
+    animation-delay: calc(var(--menu-reveal-duration) + calc(1 * var(--menu-reveal-delay))); 
+}
+.menu.active li:nth-child(2) a{
+    animation-delay: calc(var(--menu-reveal-duration) + calc(2 * var(--menu-reveal-delay)));
+}
+.menu.active li:nth-child(3) a{ 
+    animation-delay: calc(var(--menu-reveal-duration) + calc(3 * var(--menu-reveal-delay)));
+}
+.menu.active li:nth-child(4) a{ 
+    animation-delay: calc(var(--menu-reveal-duration) + calc(4 * var(--menu-reveal-delay)));
+}
 
 @keyframes revealItem {
     from {       
@@ -80,7 +88,7 @@ MENU PAGE
 .menu-content a:before{
     content: attr(data-text);
     text-transform: uppercase;
-    font-size: 12rem;
+    font-size: 20rem;
     letter-spacing: 2ch;
 
     position: absolute;
@@ -95,12 +103,30 @@ MENU PAGE
     opacity: 0;
     color:var(--menu-secondary-color);
 
-    transition: 0.3s ease-in;
+    transition: var(--menu-hover-duration) ease-in;
 }
 
 .menu-content a:hover:before{
     opacity: 1;
     letter-spacing: 0.2ch;
+}
+/*----------------------*/
+
+
+/*==== menu content / small screens ====*/
+@media only screen and (max-width: 600px) {      
+    .menu-content a{
+        font-size: 4rem; 
+        line-height: 1.2em;   
+    }
+
+    .menu-content a:before{
+        font-size: 9rem;
+    }
+
+    .menu-content a:hover:before{
+        letter-spacing: 0.0ch;
+    }
 }
 /*----------------------*/
 
@@ -113,14 +139,13 @@ MENU SOCIALS
 /*==== menu socials ====*/
 .menu-socials svg{
     position: relative;
-    width:30px;
-    margin: 0 15px;
-    transition: color 0.5s;   
+    width: 3rem ;
+    margin: 0 1.5rem;
+    transition: color var(--menu-hover-delay);   
 }
 
 .menu-socials svg:hover{
     color: var(--menu-text-color);       
-    transition: color 0.5s;
 }
 /*----------------------*/
 
@@ -128,13 +153,19 @@ MENU SOCIALS
 /*==== menu socials / entrance effect ====*/
 .menu.active .menu-socials svg{
     /*entrance*/
-   animation: scaleEntrance 0.5s;
+   animation: scaleEntrance var(--menu-scale-duration);
    animation-fill-mode: backwards;
 }
 
-.menu.active .menu-socials svg:nth-child(1) { animation-delay: 2.0s;}
-.menu.active .menu-socials svg:nth-child(2) { animation-delay: 2.15s;}
-.menu.active .menu-socials svg:nth-child(3) { animation-delay: 2.30s;}
+.menu.active .menu-socials svg:nth-child(1) { 
+    animation-delay: calc(var(--menu-scale-offset) + calc(1 * var(--menu-scale-delay))); 
+}
+.menu.active .menu-socials svg:nth-child(2) {
+     animation-delay: calc(var(--menu-scale-offset) + calc(2 * var(--menu-scale-delay)));
+}
+.menu.active .menu-socials svg:nth-child(3) {
+     animation-delay: calc(var(--menu-scale-offset) + calc(3 * var(--menu-scale-delay)));
+}
 
 
 @keyframes scaleEntrance {
@@ -156,8 +187,8 @@ MENU SOCIALS
         justify-content: flex-end; 
     
         position: absolute;
-        bottom: 5vh;
-        right: 5vw;
+        bottom: 3rem;
+        right: 3rem;
     }
 }
 /*----------------------*/
@@ -168,27 +199,25 @@ MENU SOCIALS
     .menu-socials{
         display: flex;
         justify-content: flex-end; 
-        margin-top: 2rem;        
-        padding-top: 1.2rem;
-        position: relative;
-        left: 3px;   
+        margin-top: 3rem;        
+        padding-top: 2rem; 
         
-        border-top: 1px solid var(--menu-primary-color) ;
+        border-top: var(--menu-bar-width) solid var(--menu-primary-color) ;
     }
 
     .menu.active .menu-socials{
         /*entrance*/
-       animation: borderEntrance 0.1s;
-       animation-delay: 2s;
+       animation: borderEntrance 0.0s;
+       animation-delay: var(--menu-scale-offset);
        animation-fill-mode: backwards;
     }
 
     @keyframes borderEntrance {
         from {
-            border-top: 1px solid var(--menu-bg-color) ;
+            border-top: var(--menu-bar-width) solid var(--menu-bg-color) ;
         }
         to {
-            border-top: 1px solid var(--menu-primary-color) ;
+            border-top: var(--menu-bar-width) solid var(--menu-primary-color) ;
         }    
      }
 }

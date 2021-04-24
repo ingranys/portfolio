@@ -30,6 +30,13 @@
     --menu-text-color: #FFFFFF;
     --menu-primary-color: #861360;
     --menu-secondary-color: #633654;
+    --menu-overlay-duration: 0.5s;
+    --menu-reveal-duration: 0.5s;
+    --menu-reveal-delay: 0.25s;
+    --menu-scale-duration: 0.5s;
+    --menu-scale-offset: 2.0s;
+    --menu-scale-delay: 0.15s;    
+    --menu-hover-duration: 0.3s;
     /*home theme*/
     --home-stroke-size: 1.5px;
 }
