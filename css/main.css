@@ -16,13 +16,27 @@
     --main-secondary-color: #DF209F;
     --main-tertiary-color: #DF9E20;
     --main-quatenry-color: #20DF7F;
+    --main-padding-left: 1rem;
+    /*header theme */
+    --header-padding-top : 1vh;
+    --header-padding-right : 3.5vw;
+    --header-element-size: 5rem;
+    --header-toggle-speed: 0.5s;
+    --header-bar-ratio: 0.1;
+    --header-bar-space: 1;
+    --header-bar-height: calc(var(--header-bar-ratio) * var(--header-element-size));
     /*menu theme*/
     --menu-bg-color: #430A30;
     --menu-text-color: #FFFFFF;
     --menu-primary-color: #861360;
     --menu-secondary-color: #633654;
-    /*stroke size*/
+    /*home theme*/
     --home-stroke-size: 1.5px;
+}
+
+html{
+    /* set base unit to "10px" (not "16px") */
+    font-size: 62.5%;
 }
 
 body{
@@ -34,8 +48,4 @@ body{
 
 a {
     color: inherit;
-}
-
-.btn-contact:after{
-    content: "\F054";
 }

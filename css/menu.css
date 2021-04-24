@@ -1,57 +1,10 @@
 /*
 #######################################################
-MENU HEADER
-#######################################################
-*/
-.header{
-    position: fixed;
-    width: 100vw;
-
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1vh;
-    padding-right: 3.5vw;  
-
-    z-index:100;
-
-    background-color: var(--main-bg-color) ;
-    transition-delay: 0.3s;
-}
-
-.header.active{
-    background-color: transparent ;
-    transition-delay: 0.0s;
-}
-
-
-/*
-#######################################################
-MENU LOGO
-#######################################################
-*/
-.logo, .logo svg{
-    width: 4rem;
-    height: 4rem;
-}
-
-.logo svg{
-    visibility: visible;
-    transition-delay: 0.3s;
-}
-
-.header.active .logo svg{
-    visibility: hidden;
-    transition-delay: 0.0s;
-}
-
-
-/*
-#######################################################
 MENU PAGE
 #######################################################
 */
 
-/*==== overlay menu ====*/
+/*==== overlay menu effect ====*/
 .menu{
     transform : translateY(-100%);
     width: 100vw;
@@ -151,7 +104,13 @@ MENU PAGE
 }
 /*----------------------*/
 
-/*==== menu social icons ====*/
+
+/*
+#######################################################
+MENU SOCIALS
+#######################################################
+*/
+/*==== menu socials ====*/
 .menu-socials svg{
     position: relative;
     width:30px;
@@ -166,7 +125,7 @@ MENU PAGE
 /*----------------------*/
 
 
-/*==== menu social / entrance effect ====*/
+/*==== menu socials / entrance effect ====*/
 .menu.active .menu-socials svg{
     /*entrance*/
    animation: scaleEntrance 0.5s;
@@ -190,7 +149,7 @@ MENU PAGE
 /*----------------------*/
 
 
-/*==== menu social / responsive layout ====*/
+/*==== menu socials / large screens ====*/
 @media only screen and (min-width: 600px) {  
     .menu-socials{
         display: flex;
@@ -201,8 +160,10 @@ MENU PAGE
         right: 5vw;
     }
 }
+/*----------------------*/
 
 
+/*==== menu socials / small screens ====*/
 @media only screen and (max-width: 600px) {    
     .menu-socials{
         display: flex;
@@ -230,84 +191,5 @@ MENU PAGE
             border-top: 1px solid var(--menu-primary-color) ;
         }    
      }
-
-
-
-
-
-}
-/*----------------------*/
-
-/*
-#######################################################
-MENU TOGGLE
-#######################################################
-*/
-
-/*==== menu toggle ====*/
-.menu-toggle{
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-bar{
-    width: 4rem;
-    height: 0.3rem;
-    border-radius: 0.15rem;
-    position : relative;
-    transform-origin: center;
-}
-/*----------------------*/
-
-
-/*==== menu toggle colors ====*/
-.header:not(.active) .menu-toggle .menu-bar{
-    background-color: var(--main-text-color);
-}
-
-.header.active .menu-toggle .menu-bar{
-    background-color: var(--menu-primary-color);
-}
-
-@media(hover: hover) and (pointer: fine) {
-    .header:not(.active) .menu-toggle:hover .menu-bar{
-        background-color: var(--main-secondary-color);
-    }
-
-    .header.active .menu-toggle:hover .menu-bar{
-        background-color: var(--menu-text-color);
-    }
-}
-/*----------------------*/
-
-/*==== menu toggle animation ====*/
-.menu-bar{
-    /*speed*/
-    transition: all 0.5s ease;
-}
-
-.menu-bar.top{
-    top: -0.75rem;
-}
-.menu-bar.bottom{
-    top: +0.75rem;
-}
-
-.header.active .menu-toggle .top{    
-    transform: translate(0,1.05rem) rotate(45deg);
-}
-.header.active .menu-toggle .bottom{    
-    transform: translate(0,-1.05rem) rotate(-45deg);
-}
-
-.header.active .menu-toggle .middle{   
-    opacity: 0; 
-    transform: translate(-3rem,0px);
 }
 /*----------------------*/

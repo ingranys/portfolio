@@ -1,0 +1,121 @@
+/*
+#######################################################
+HEADER
+#######################################################
+*/
+.header{
+    position: fixed;
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-between;
+    padding-top: var(--header-padding-top);
+    padding-right: var(--header-padding-right);  
+
+    background-color: var(--main-bg-color) ;
+    transition-delay: 0.3s;
+
+    z-index:100;
+}
+
+.header.active{
+    background-color: transparent ;
+    transition-delay: 0.0s;
+}
+
+
+/*
+#######################################################
+HEADER LOGO
+#######################################################
+*/
+.logo, .logo svg{
+    width: var(--header-element-size);
+    height: var(--header-element-size);
+}
+
+.logo svg{
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+.header.active .logo svg{
+    visibility: hidden;
+    transition-delay: 0.0s;
+}
+
+
+/*
+#######################################################
+HEADER TOGGLE
+#######################################################
+*/
+
+/*==== menu toggle ====*/
+.toggle{
+    width: var(--header-element-size);
+    height: var(--header-element-size);
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar{
+    width: var(--header-element-size);
+    height: var(--header-bar-height);
+    border-radius: var(--header-bar-height);
+    position : relative;
+    transform-origin: center;
+}
+/*----------------------*/
+
+
+/*==== menu toggle colors ====*/
+.header:not(.active) .toggle .bar{
+    background-color: var(--main-text-color);
+}
+
+.header.active .toggle .bar{
+    background-color: var(--menu-primary-color);
+}
+
+@media(hover: hover) and (pointer: fine) {
+    .header:not(.active) .toggle:hover .bar{
+        background-color: var(--main-secondary-color);
+    }
+
+    .header.active .toggle:hover .bar{
+        background-color: var(--menu-text-color);
+    }
+}
+/*----------------------*/
+
+
+/*==== menu toggle animation ====*/
+.bar{
+    /*speed*/
+    transition: all var(--header-toggle-speed) ease;
+}
+
+.bar.top{
+    transform: translate(0,calc(-1 * var(--header-bar-space) * var(--header-bar-height)));
+}
+.bar.bottom{
+    transform: translate(0,calc(+1 * var(--header-bar-space) * var(--header-bar-height)));
+}
+
+.header.active .toggle .top{    
+    transform: translate(0,calc(+1 * var(--header-bar-height))) rotate(45deg);
+}
+.header.active .toggle .bottom{    
+    transform: translate(0,calc(-1* var(--header-bar-height))) rotate(-45deg);
+}
+
+.header.active .toggle .middle{   
+    opacity: 0; 
+    transform: translate(calc(-0.8 * var(--header-element-size)),0px);
+}
+/*----------------------*/
