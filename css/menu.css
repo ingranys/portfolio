@@ -153,13 +153,13 @@ MENU SOCIALS
    animation-fill-mode: backwards;
 }
 
-.menu.active .menu-socials svg:nth-child(1) { 
+.menu.active .menu-socials a:nth-child(1) svg { 
     animation-delay: calc(var(--menu-scale-offset) + (1 * var(--menu-scale-delay))); 
 }
-.menu.active .menu-socials svg:nth-child(2) {
+.menu.active .menu-socials a:nth-child(2) svg{
     animation-delay: calc(var(--menu-scale-offset) + (2 * var(--menu-scale-delay)));
 }
-.menu.active .menu-socials svg:nth-child(3) {
+.menu.active .menu-socials a:nth-child(3) svg {
     animation-delay: calc(var(--menu-scale-offset) + (3 * var(--menu-scale-delay)));
 }
 

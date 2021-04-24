@@ -20,6 +20,7 @@ const convertImages = (query, callback) => {
         const parser = new DOMParser();
         const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
   
+
         if (image.id) svg.id = image.id;
         if (image.className) svg.classList = image.classList;
         if (image.title) {
@@ -27,8 +28,16 @@ const convertImages = (query, callback) => {
           title.textContent = image.title;
           svg.appendChild(title);
         }
-  
-        image.parentNode.replaceChild(svg, image);
+
+        if (image.getAttribute('link')){
+          var link = document.createElement('a');
+          link.setAttribute('href', image.getAttribute('link'));
+          link.appendChild(svg);  
+          image.parentNode.replaceChild(link, image);  
+        } else {
+          image.parentNode.replaceChild(svg, image);
+        }
+        
       })
       .then(callback)
       .catch(error => console.error(error))
