@@ -1,12 +1,11 @@
 /* toggle menu */
-const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.menu');
-const logo = document.querySelector('.logo');
+const header = document.querySelector('.header');
+const toggle = document.querySelector('.menu-toggle');
 
 toggle.addEventListener('click', () => {
-  toggle.classList.toggle('active');
   menu.classList.toggle('active');
-  logo.classList.toggle('active');
+  header.classList.toggle('active');
 })
 
 

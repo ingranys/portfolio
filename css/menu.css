@@ -3,7 +3,7 @@
 MENU HEADER
 #######################################################
 */
-header{
+.header{
     position: fixed;
     width: 100vw;
 
@@ -15,6 +15,12 @@ header{
     z-index:100;
 
     background-color: var(--main-bg-color) ;
+    transition-delay: 0.3s;
+}
+
+.header.active{
+    background-color: transparent ;
+    transition-delay: 0.0s;
 }
 
 
@@ -23,14 +29,17 @@ header{
 MENU LOGO
 #######################################################
 */
-.logo svg{
+.logo, .logo svg{
     width: 4rem;
     height: 4rem;
+}
+
+.logo svg{
     visibility: visible;
     transition-delay: 0.3s;
 }
 
-.logo.active svg{
+.header.active .logo svg{
     visibility: hidden;
     transition-delay: 0.0s;
 }
@@ -51,7 +60,7 @@ MENU PAGE
     color: var(--menu-primary-color);   
     font-style: normal;
     font-weight: 400;
-    transition: 0.5s cubic-bezier(0,.75,.33,.98);
+    transition: 0.5s;
     z-index: 100;
 }
 
@@ -258,20 +267,20 @@ MENU TOGGLE
 
 
 /*==== menu toggle colors ====*/
-.menu-toggle:not(.active) .menu-bar{
+.header:not(.active) .menu-toggle .menu-bar{
     background-color: var(--main-text-color);
 }
 
-.menu-toggle.active .menu-bar{
+.header.active .menu-toggle .menu-bar{
     background-color: var(--menu-primary-color);
 }
 
 @media(hover: hover) and (pointer: fine) {
-    .menu-toggle:not(.active):hover .menu-bar{
+    .header:not(.active) .menu-toggle:hover .menu-bar{
         background-color: var(--main-secondary-color);
     }
 
-    .menu-toggle.active:hover .menu-bar{
+    .header.active .menu-toggle:hover .menu-bar{
         background-color: var(--menu-text-color);
     }
 }
@@ -290,14 +299,14 @@ MENU TOGGLE
     top: +0.75rem;
 }
 
-.menu-toggle.active .top{    
+.header.active .menu-toggle .top{    
     transform: translate(0,1.05rem) rotate(45deg);
 }
-.menu-toggle.active .bottom{    
+.header.active .menu-toggle .bottom{    
     transform: translate(0,-1.05rem) rotate(-45deg);
 }
 
-.menu-toggle.active .middle{   
+.header.active .menu-toggle .middle{   
     opacity: 0; 
     transform: translate(-3rem,0px);
 }
