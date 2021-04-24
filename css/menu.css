@@ -9,10 +9,12 @@ header{
 
     display: flex;
     justify-content: space-between;
-    padding-top: 3vh;
+    padding-top: 1vh;
     padding-right: 3.5vw;  
 
     z-index:100;
+
+    background-color: var(--main-bg-color) ;
 }
 
 
