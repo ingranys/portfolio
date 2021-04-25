@@ -59,6 +59,25 @@ BASIC
 }
 /*----------------------*/
 
+/*==== scroll down symbol ====*/
+.section-down, .section-down svg{
+    width: var(--home-chevron-size);
+    height: var(--home-chevron-size);
+}
+
+.section-down{
+    position: absolute;
+    left:50%;  
+    transform: translateX(-50%);
+    bottom: 0;
+    stroke-width: var(--home-chevron-stroke)px;
+}
+
+.section-down:hover svg{
+    color: var(--main-secondary-color);
+}
+/*----------------------*/
+
 /*==== text reveal ====*/
 .home h1{
     overflow: hidden;
@@ -116,16 +135,10 @@ BASIC
     pointer-events: none;
 }
 
-#particles, #firstname{
+#particles, #firstname, #home-scroll{
     pointer-events: all;
 }
 /*----------------------*/
-
-/*
-.btn-contact:after{
-    content: "\F054";
-}
-*/
 
 
 /*
