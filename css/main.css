@@ -47,6 +47,7 @@
     --home-underline-duration: 0.3s;
     --home-chevron-size: var(--header-element-size);
     --home-chevron-stroke: var(--header-bar-height);
+    --home-chevron-bottom: 0.3rem;
 }
 
 html{
@@ -62,5 +63,7 @@ body{
 }
 
 a {
+    display: block;
     color: inherit;
+    height: 0%;
 }
