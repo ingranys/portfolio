@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>LOGO_URW_RGB_red&amp;amp;black_verysmall</dc:title>
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -58,8 +58,6 @@
     <style
        id="style941">.cls-1{fill:#3b3836;}.cls-2{fill:#e1251b;}</style>
   </defs>
-  <title
-     id="title945">LOGO_URW_RGB_red&amp;amp;black_verysmall</title>
   <g
      id="g977"
      transform="translate(36.861994,14.507475)">

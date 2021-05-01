@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>La Poste logo</dc:title>
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -70,8 +70,6 @@
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="Calque_1" />
-  <title
-     id="title2">La Poste logo</title>
   <!--l-->
   <path
      style="fill:#706f6f;fill-opacity:1"
