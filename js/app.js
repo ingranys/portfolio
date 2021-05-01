@@ -46,6 +46,9 @@ const convertImages = (query, callback) => {
           /* put inside an anchor whe link is required and replace image */
           var link = document.createElement('a');
           link.setAttribute('href', image.getAttribute('link'));
+          if (image.getAttribute('target')){
+            link.setAttribute('target', image.getAttribute('target'));
+          }
           link.appendChild(svg);  
           image.parentNode.replaceChild(link, image);  
         } else {
