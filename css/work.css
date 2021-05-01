@@ -1,0 +1,57 @@
+/*
+#######################################################
+BASIC
+#######################################################
+*/
+/*==== style ====*/
+.work h1{
+    font-weight: 700;
+    font-size: 8rem;
+    color: var(--main-primary-color);
+    padding-bottom: 1.5rem;
+}
+
+.work h2{
+    font-weight: 600;
+    font-size: 4.5rem;
+    padding-bottom: 1.5rem; 
+}
+
+.work h1, .work h2{
+    padding-left: 1rem;
+}
+/*----------------------*/
+
+/*==== text reveal ====*/
+.work h1, .work h2{
+    overflow: hidden;
+}
+
+.work h1 span, .work h2 span{
+    display: inline-block;
+    animation: revealWork var(--home-reveal-duration);
+    animation-fill-mode: backwards;
+}
+
+.work h2 span:nth-child(1){ 
+    animation-delay: calc(1 * var(--home-reveal-delay)); 
+}
+.work h2 span:nth-child(2){ 
+    animation-delay: calc(2 * var(--home-reveal-delay)); 
+}
+.work h2 span:nth-child(3){ 
+    animation-delay: calc(3 * var(--home-reveal-delay));
+}
+.work h2 span:nth-child(4){ 
+    animation-delay: calc(4 * var(--home-reveal-delay));
+}
+
+@keyframes revealWork {
+    from {       
+        transform: translateY(300%);       
+    }
+    to {
+        transform: translateY(0%);
+    }    
+}
+/*----------------------*/

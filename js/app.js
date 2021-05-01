@@ -64,6 +64,42 @@ convertImages('img');
 
 /*
 #######################################################
+SCROLL
+#######################################################
+*/
+/* use IntersectionObserver > https://stackoverflow.com/a/62536793/5390321 */
+function onObserverChange(entries, observer)
+{
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.classList.contains('lock')){
+        entry.target.classList.remove('lock');
+        entry.target.classList.add('init');
+    } /*else if (!entry.isIntersecting && !entry.target.classList.contains('lock')) {
+        entry.target.className = entry.target.classList[0];
+        entry.target.classList.add('lock');
+    }*/
+    /*
+    var txt = "class:" + entry.target.className + ", id:" + entry.target.id + ", visibility: " + entry.isIntersecting;
+    console.log(txt);
+    */
+  });
+}
+
+let options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3
+  };
+
+let observer = new IntersectionObserver(onObserverChange, options);
+
+cards.forEach(card => {
+    observer.observe(card);
+});
+
+
+/*
+#######################################################
 PARTICLES
 #######################################################
 */
