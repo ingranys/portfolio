@@ -8,6 +8,7 @@ BASIC
     font-weight: 700;
     font-size: 8rem;
     color: var(--main-primary-color);
+    padding-top: var( --header-total-height);
     padding-bottom: 1.5rem;
 }
 
@@ -27,10 +28,18 @@ BASIC
     overflow: hidden;
 }
 
-.work h1 span, .work h2 span{
+.work h1.lock, .work h2.lock{
+    visibility: hidden;
+}
+
+.work h1:not(.lock) span, .work h2:not(.lock) span{
     display: inline-block;
     animation: revealWork var(--home-reveal-duration);
     animation-fill-mode: backwards;
+}
+
+.work h1 span{ 
+    animation-delay: calc(1 * var(--home-reveal-delay)); 
 }
 
 .work h2 span:nth-child(1){ 

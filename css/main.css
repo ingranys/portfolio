@@ -25,7 +25,7 @@
     --header-bar-ratio: 0.05;
     --header-bar-space: 3;
     --header-bar-height: calc(var(--header-bar-ratio) * var(--header-element-size));
-    --header-total-width: calc(var(--header-padding-top) + var(--header-element-size));
+    --header-total-height: calc(var(--header-padding-top) + var(--header-element-size));
     /*menu theme*/
     --menu-bg-color: #430A30;
     --menu-text-color: #FFFFFF;

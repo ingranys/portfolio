@@ -174,7 +174,7 @@ LARGE SCREENS
 
     #particles{
         width: 70%; 
-        height: calc(1 * (100vh - 2 * var(--header-total-width)));
+        height: calc(1 * (100vh - 2 * var(--header-total-height)));
     }
 }
 
@@ -195,8 +195,8 @@ SMALL SCREENS
     }
 
     #particles{
-        height: calc(100vh - var(--header-total-width));
+        height: calc(100vh - var(--header-total-height));
         position: relative;
-        top: var(--header-total-width);
+        top: var(--header-total-height);
     }
 }
