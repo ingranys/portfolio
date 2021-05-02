@@ -48,6 +48,32 @@
     --home-chevron-size: var(--header-element-size);
     --home-chevron-stroke: var(--header-bar-height);
     --home-chevron-bottom: 0.3rem;
+    /*footer theme*/
+    --footer-bg-color: #0a1d43;
+    --footer-text-color: #FFFFFF;
+    --footer-primary-color: #133986;
+    --footer-secondary-color: #364563;
+    --footer-reveal-duration: 0.5s;
+    --footer-reveal-delay: 0.25s;
+    --footer-scale-duration: 0.5s;
+    --footer-scale-offset: 0.5s;
+    --footer-scale-delay: 0.15s;    
+    --footer-hover-duration: 0.3s;
+    --footer-bar-width: 1px;
+    /*
+    --footer-bg-color: var(--menu-bg-color);
+    --footer-text-color: var(--menu-text-color);
+    --footer-primary-color: var(--menu-primary-color);
+    --footer-secondary-color: var(--menu-secondary-color);
+    --footer-reveal-duration: var(--menu-reveal-duration);
+    --fotoer-reveal-delay: var(--menu-reveal-delay);
+    --footer-scale-duration: var(--menu-scale-duration);
+    --footer-scale-offset: var(--menu-scale-offset);
+    --footer-scale-delay: var(--menu-scale-delay);  
+    --footer-hover-duration: var(--menu-hover-duration);
+    --footer-bar-width: var(--menu-bar-width);
+    */
+
 }
 
 html{
