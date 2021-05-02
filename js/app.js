@@ -1,17 +1,38 @@
 /*
 #######################################################
-TOGGLE
+MENU
 #######################################################
 */
 /* get elements */
 const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
+const items = document.querySelectorAll('.menu-content > li > a');
 
 /* toggle on click */
 toggle.addEventListener('click', () => {
   menu.classList.toggle('active');
   header.classList.toggle('active');
+})
+
+/* scroll to section on click */
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    document.location.hash = '#home'
+    let anchor = item.getAttribute('data-text');
+
+    if (menu.classList.contains('active')) {
+      menu.classList.remove('active');
+    }
+    if (header.classList.contains('active')) {
+      header.classList.remove('active');
+    }
+
+    setTimeout(function(){
+      /*document.location.hash = '#' + anchor.toString();*/
+      document.querySelector('.' + anchor.toString()).scrollIntoView({behaviour: "auto"});
+    }, 500); 
+  })
 })
 
 
