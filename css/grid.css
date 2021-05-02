@@ -40,8 +40,13 @@ STYLE
 }
 /*----------------------*/
 
-/*==== card content  ====*/
-/* logo disc */
+
+/*
+#######################################################
+CONTENT
+#######################################################
+*/
+/*==== logo disc ====*/
 .flip-card .front::before{
     content:"";
     background-color: var(--main-primary-color);
@@ -53,32 +58,80 @@ STYLE
 
     border-radius: 50%;  
 }
+/*----------------------*/
 
-/* logo */
+/*==== logo ====*/
 .flip-card .front svg{
     width: 70%;
     height: 100%;
     filter: grayscale(100%);
 }
+/*----------------------*/
 
-/* text */
-.flip-card p:first-child{
+/*==== text ====*/
+.flip-card p{
     font-weight: 600;
     font-size: 4rem;
     color: var(--main-bg-color);
 }
 
-.flip-card p:last-child{
+.flip-card a{
     font-weight: 400;
     font-size: 2rem;
     color: var(--main-primary-color);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.flip-card a span span{
+    padding-left: 1rem;
+}
+/*----------------------*/
+
+/*==== link / hover effect  ====*/
+.flip-card a > span{
+    position: relative;
+    overflow: hidden;
+}
+
+.flip-card a > span::after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    right: 100%;
+    background: var(--main-primary-color);    
+    transition: 0.2s 0.3s ease-out;
+}
+
+.flip-card a:hover > span::after{
+    right: 0%;
+    transition: 0.2s ease-in;
+}
+
+.flip-card a > span::before{
+    content: '\2192';
+    position: absolute;
+    width: 100%;
+    left: -100%;
+    text-align: center; 
+    background-color: var(--main-text-color);
+    z-index: 1;
+    transition: 0.2s ease-in;
+}
+
+.flip-card a:hover > span::before{
+    left: 0%;
+    transition: 0.2s 0.3s ease-out;
 }
 /*----------------------*/
 
 
 /*
 #######################################################
-ANIMATION
+FLIP ANIMATION
 #######################################################
 */
 /*==== 3D Effect ====*/
@@ -308,11 +361,11 @@ SMALL SCREENS
         height: 10rem;
     }
 
-    .flip-card p:first-child{
+    .flip-card p{
         font-size: 3rem;
     }
     
-    .flip-card p:last-child{
+    .flip-card a{
         font-size: 1.5rem;
     }
 }
