@@ -29,9 +29,9 @@ items.forEach(item => {
     }
 
     setTimeout(function(){
-      /*document.location.hash = '#' + anchor.toString();*/
       document.querySelector('.' + anchor.toString()).scrollIntoView({behaviour: "auto"});
-    }, 500); 
+      document.location.hash = '#' + anchor.toString();
+    }, 500);
   })
 })
 
