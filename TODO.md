@@ -26,6 +26,7 @@
 
 # Footer
 (B) Ajouter bas de page @footer #section {cm:2021-05-02}
+(C) Augmenter délai sur apparition copyright @footer #effet
 
 
 
