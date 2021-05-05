@@ -79,6 +79,10 @@
 html{
     /* set base unit to "10px" (not "16px") */
     font-size: 62.5%;
+    /* add scroll snapping (add to body as well for Safari)
+    https://css-tricks.com/practical-css-scroll-snapping/
+    #example-3-vertical-full-screen */
+    scroll-snap-type: y proximity;    
 }
 
 body{
@@ -86,6 +90,10 @@ body{
     color: var(--main-text-color);
     font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
+}
+
+section{
+    scroll-snap-align: start;
 }
 
 a {
