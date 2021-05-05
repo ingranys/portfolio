@@ -92,7 +92,7 @@ body{
     overflow-x: hidden;
 }
 
-section{
+section, footer {
     scroll-snap-align: start;
 }
 
