@@ -9,10 +9,22 @@ const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
 const items = document.querySelectorAll('.menu-content > li > a');
 
+/* compute header delay */
+const style = getComputedStyle(document.body);
+const headerDelay = 1000*0.8*parseFloat(style.getPropertyValue('--menu-reveal-duration')); 
+
 /* toggle on click */
 toggle.addEventListener('click', () => {
+
   menu.classList.toggle('active');
-  header.classList.toggle('active');
+
+  if (header.classList.contains('active')){
+    setTimeout(function(){
+      header.classList.remove('active');
+    }, headerDelay);
+  } else {
+    header.classList.add('active');
+  }
 })
 
 /* scroll to section on click */
