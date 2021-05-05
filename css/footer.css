@@ -39,39 +39,11 @@ FOOTER COPYRIGHT
     align-items: center;
 
     color: var(--footer-text-color);
-    overflow: hidden;
 }
 
 .copyright span:last-child{
     color: var(--footer-primary-color); 
 }
-
-.copyright span{
-    display: inline-block;
-    animation: revealCopyright var(--footer-reveal-duration);
-    animation-fill-mode: backwards;
-}
-
-.copyright span:nth-child(1){ 
-    animation-delay: calc(1 * var(--footer-reveal-delay)); 
-}
-.copyright span:nth-child(2){ 
-    animation-delay: calc(2 * var(--footer-reveal-delay)); 
-}
-.copyright span:nth-child(3){ 
-    animation-delay: calc(3 * var(--footer-reveal-delay));
-}
-
-
-@keyframes revealCopyright {
-    from {       
-        transform: translateY(150%);       
-    }
-    to {
-        transform: translateY(0%);
-    }    
-}
-
 
 
 /*
@@ -98,34 +70,6 @@ FOOTER SOCIALS
 }
 /*----------------------*/
 
-/*==== footer socials / entrance effect ====*/
-.footer-socials:not(.lock) svg{
-    /*entrance*/
-   animation: scaleSocials var(--footer-scale-duration);
-   animation-fill-mode: backwards;
-}
-
-.footer-socials a:nth-child(1) svg { 
-    animation-delay: calc(var(--footer-scale-offset) + (1 * var(--footer-scale-delay))); 
-}
-.footer-socials a:nth-child(2) svg{
-    animation-delay: calc(var(--footer-scale-offset) + (2 * var(--footer-scale-delay)));
-}
-.footer-socials a:nth-child(3) svg {
-    animation-delay: calc(var(--footer-scale-offset) + (3 * var(--footer-scale-delay)));
-}
-
-@keyframes scaleSocials {
-   from {
-       opacity: 0;
-       transform: scale(0.1);
-   }
-   to {
-       transform: scale(1);
-   }    
-}
-/*----------------------*/
-
 
 /*
 #######################################################
@@ -147,21 +91,7 @@ SMALL SCREENS
         padding-top: 2rem; 
 
         border-top: var(--footer-bar-width) solid var(--footer-primary-color) ; 
-
-        /*entrance*/
-        animation: footerBarEntrance 0.0s;
-        animation-delay: var(--footer-scale-offset);
-        animation-fill-mode: backwards;
     }
-
-    @keyframes footerBarEntrance {
-        from {
-            border-top: var(--footer-bar-width) solid var(--footer-bg-color) ;
-        }
-        to {
-            border-top: var(--footer-bar-width) solid var(--footer-primary-color) ;
-        }    
-     }
     /*----------------------*/
 }
 /*----------------------*/
