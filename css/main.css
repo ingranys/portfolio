@@ -18,6 +18,7 @@
     --main-quatenry-color: #20DF7F;
     --main-padding-left: 1rem;
     /*header theme */
+    --header-shadow-color: #000000;
     --header-padding-top : 1rem;
     --header-padding-right : 2rem;
     --header-element-size: 5rem;

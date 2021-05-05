@@ -93,7 +93,8 @@ convertImages('img');
 SCROLL
 #######################################################
 */
-/* use IntersectionObserver > https://stackoverflow.com/a/62536793/5390321 */
+/* use IntersectionObserver > 
+https://stackoverflow.com/a/62536793/5390321 */
 function onObserverChange(entries, observer)
 {
   entries.forEach(entry => {
@@ -122,6 +123,17 @@ let observer = new IntersectionObserver(onObserverChange, options);
 cards.forEach(card => {
     observer.observe(card);
 });
+
+/* toggle header shadow */
+window.onscroll = function() {
+  if(window.scrollY !== 0){
+    if(!header.classList.contains('shadow')){
+      header.classList.add('shadow');
+    }
+    }else{
+      header.classList.remove('shadow');
+    }
+};
 
 
 /*

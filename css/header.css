@@ -14,6 +14,7 @@ HEADER
 
     background-color: var(--main-bg-color) ;
     transition-delay: calc(0.8 * var(--menu-reveal-duration));
+    transition-property: background-color;
 
     z-index:100;
 }
@@ -21,6 +22,11 @@ HEADER
 .header.active{
     background-color: transparent ;
     transition-delay: 0.0s;
+    transition-property: background-color;
+}
+
+.header.shadow{
+    box-shadow: 0 0.3rem 0.5rem var(--header-shadow-color);
 }
 
 
