@@ -89,12 +89,12 @@ FOOTER SOCIALS
     position: relative;
     width: 3rem ;
     margin: 0 1.5rem;
-    color: var(--footer-primary-color);
+    color: var(--footer-text-color);
     transition: color var(--footer-hover-delay);   
 }
 
 .footer-socials svg:hover{
-    color: var(--footer-text-color);       
+    color: var(--footer-secondary-color);;       
 }
 /*----------------------*/
 

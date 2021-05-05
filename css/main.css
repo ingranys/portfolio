@@ -49,10 +49,16 @@
     --home-chevron-stroke: var(--header-bar-height);
     --home-chevron-bottom: 0.3rem;
     /*footer theme*/
+    --footer-bg-color: hsl(220, 20%, 05%);
+    --footer-text-color: #FFFFFF;
+    --footer-primary-color: #20DFDF;
+    --footer-secondary-color: #DF209F;
+    /* - blue theme
     --footer-bg-color: #0a1d43;
     --footer-text-color: #FFFFFF;
     --footer-primary-color: #133986;
     --footer-secondary-color: #364563;
+    */
     --footer-reveal-duration: 0.5s;
     --footer-reveal-delay: 0.25s;
     --footer-scale-duration: 0.5s;
@@ -121,7 +127,7 @@ SCROLLBAR
 }
 
 *::-webkit-scrollbar-track {
-    background: hsl(220, 20%, 20%);;
+    background: hsl(220, 20%, 20%);
 }
 
 *::-webkit-scrollbar-thumb {
