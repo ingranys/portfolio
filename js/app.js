@@ -17,8 +17,7 @@ toggle.addEventListener('click', () => {
 
 /* scroll to section on click */
 items.forEach(item => {
-  item.addEventListener('click', () => {
-    document.location.hash = '#home'
+  item.addEventListener('click', (event) => {
     let anchor = item.getAttribute('data-text');
 
     if (menu.classList.contains('active')) {
@@ -27,11 +26,14 @@ items.forEach(item => {
     if (header.classList.contains('active')) {
       header.classList.remove('active');
     }
-
+    
     setTimeout(function(){
-      document.querySelector('.' + anchor.toString()).scrollIntoView({behaviour: "auto"});
-      document.location.hash = '#' + anchor.toString();
+      /*document.location.hash = '#' + anchor.toString();*/
+      document.querySelector('.' + anchor.toString()).scrollIntoView({behavior: "smooth"});
+      history.pushState(null,null,'#' + anchor.toString());
     }, 500);
+
+    event.preventDefault();
   })
 })
 
