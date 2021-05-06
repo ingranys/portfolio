@@ -109,14 +109,14 @@ HEADER TOGGLE
     transform: translate(0,calc(+1 * var(--header-bar-space) * var(--header-bar-height)));
 }
 
-.header.active .toggle .top{    
+.toggle.active .top{    
     transform: translate(0,calc(+1 * var(--header-bar-height))) rotate(45deg);
 }
-.header.active .toggle .bottom{    
+.toggle.active .bottom{    
     transform: translate(0,calc(-1* var(--header-bar-height))) rotate(-45deg);
 }
 
-.header.active .toggle .middle{   
+.toggle.active .middle{   
     opacity: 0; 
     transform: translate(calc(-0.8 * var(--header-element-size)),0px);
 }

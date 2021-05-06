@@ -17,6 +17,7 @@ const headerDelay = 1000*0.8*parseFloat(style.getPropertyValue('--menu-reveal-du
 toggle.addEventListener('click', () => {
 
   menu.classList.toggle('active');
+  toggle.classList.toggle('active');
 
   if (header.classList.contains('active')){
     setTimeout(function(){
