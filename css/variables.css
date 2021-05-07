@@ -1,0 +1,77 @@
+/*
+#######################################################
+VARIABLES
+#######################################################
+*/
+:root{
+    /* main theme */
+    --main-bg-color: #1F242E;
+    --main-text-color: #ffffff;
+    --main-primary-color: #20DFDF;
+    --main-secondary-color: #DF209F;
+    --main-tertiary-color: #DF9E20;
+    --main-quatenry-color: #20DF7F;
+    --main-padding-left: 1rem;
+    --main-stroke-width: 2.5px;
+    --main-strip-height: 6rem;
+}
+
+header, nav {
+    /* header theme */
+    --header-shadow-color: #000000;
+    --header-text-color : ;
+    --header-padding-right : 2rem;
+    --header-toggle-speed: 0.5s; 
+    --header-padding-top : 1rem;
+    --header-element-size: 5rem;
+    --header-bar-ratio: 0.05;
+    --header-bar-space: 3; 
+    --header-bar-height: var(--main-stroke-width);
+    --header-total-height : var(--main-strip-height);
+    /* menu theme */
+    --menu-bg-color: #430A30;
+    --menu-text-color: #FFFFFF;
+    --menu-primary-color: #861360;
+    --menu-secondary-color: #633654;
+    --menu-overlay-duration: 0.5s;
+    --menu-reveal-duration: 0.5s;
+    --menu-reveal-delay: 0.25s;
+    --menu-scale-duration: 0.5s;
+    --menu-scale-offset: 2.0s;
+    --menu-scale-delay: 0.15s;    
+    --menu-hover-duration: 0.3s;
+    --menu-bar-width: 1px;
+}
+
+.home {
+    /* home theme */
+    --home-stroke-size: 1.5px;
+    --home-cursor-period: 0.7s;
+    --home-reveal-duration: 0.3s;
+    --home-reveal-delay: 0.1s;
+    --home-underline-duration: 0.3s;
+    --home-chevron-size: 5rem;
+    --home-chevron-stroke: var(--main-stroke-width);
+    --home-chevron-bottom: 0.3rem;
+}
+
+.work{
+    /* work */
+    --work-reveal-duration: 0.3s;
+    --work-reveal-delay: 0.1s;
+}
+
+footer{
+    /* footer theme */
+    --footer-bg-color: hsl(220, 20%, 05%);
+    --footer-text-color: #FFFFFF;
+    --footer-primary-color: #20DFDF;
+    --footer-secondary-color: #DF209F;
+    --footer-reveal-duration: 0.5s;
+    --footer-reveal-delay: 0.25s;
+    --footer-scale-duration: 0.5s;
+    --footer-scale-offset: 0.5s;
+    --footer-scale-delay: 0.15s;    
+    --footer-hover-duration: 0.3s;
+    --footer-bar-width: 1px;
+}
