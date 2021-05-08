@@ -62,11 +62,11 @@ FOOTER SOCIALS
     width: 3rem ;
     margin: 0 1.5rem;
     color: var(--footer-focal-color);
-    transition: color var(--footer-hover-delay);   
+    transition: color var(--footer-hover-duration);   
 }
 
 .footer-socials svg:hover{
-    color: var(--footer-secondary-color);;       
+    color: var(--footer-secondary-color);    
 }
 /*----------------------*/
 

@@ -120,11 +120,6 @@ footer{
     --footer-secondary-color: var(--main-secondary-color);
     /* sizes */
     --footer-bar-width: 1px; 
-    /* animations */  
-    --footer-reveal-duration: 0.5s;
-    --footer-reveal-delay: 0.25s;
-    --footer-scale-duration: 0.5s;
-    --footer-scale-offset: 0.5s;
-    --footer-scale-delay: 0.15s;    
+    /* animations */     
     --footer-hover-duration: 0.3s;
 }
