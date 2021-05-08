@@ -4,74 +4,107 @@ VARIABLES
 #######################################################
 */
 :root{
-    /* main theme */
-    --main-bg-color: #1F242E;
-    --main-text-color: #ffffff;
-    --main-primary-color: #20DFDF;
-    --main-secondary-color: #DF209F;
-    --main-tertiary-color: #DF9E20;
-    --main-quatenry-color: #20DF7F;
+    /* colors */
+    --main-background-color: hsl(220, 20%, 15%);
+    --main-verydark-color: hsl(220, 20%, 05%);
+    --main-mediumdark-color: hsl(220, 20%, 10%);
+    --main-lightdark-color: hsl(220, 20%, 20%);
+    --main-text-color: hsl(0, 0%, 100%);
+    --main-primary-color: hsl(180, 75%, 50%);
+    --main-secondary-color: hsl(320, 75%, 50%);
+    --main-tertiary-color: hsl(40, 75%, 50%);
+    --main-quatenry-color: hsl(150, 75%, 50%);
+    /* margin and padding */
     --main-padding-left: 1rem;
+    /* sizing */
     --main-stroke-width: 2.5px;
     --main-strip-height: 6rem;
 }
 
 header, nav {
-    /* header theme */
-    --header-shadow-color: #000000;
-    --header-text-color : ;
+    /*==== header ====*/
+    /* colors */
+    --header-background-color : var(--main-background-color);
+    --header-shadow-color: hsl(0, 0%, 0%);
+    --header-text-color: var(--main-text-color);
+    --header-secondary-color: var(--main-secondary-color); 
+    /* margin and padding */
     --header-padding-right : 2rem;
-    --header-toggle-speed: 0.5s; 
     --header-padding-top : 1rem;
+    /* sizing */
     --header-element-size: 5rem;
     --header-bar-ratio: 0.05;
     --header-bar-space: 3; 
     --header-bar-height: var(--main-stroke-width);
     --header-total-height : var(--main-strip-height);
-    /* menu theme */
-    --menu-bg-color: #430A30;
-    --menu-text-color: #FFFFFF;
-    --menu-primary-color: #861360;
-    --menu-secondary-color: #633654;
+    /* animations */
+    --header-toggle-speed: 0.5s; 
+    /*----------------------*/
+
+    /*==== menu ====*/
+    /* colors */
+    --menu-background-color: hsl(320, 75%, 15%);
+    --menu-text-color: hsl(0, 0%, 100%);
+    --menu-primary-color: hsl(320, 75%, 30%);
+    --menu-secondary-color: hsl(320, 30%, 30%);
+    /* sizing */
+    --menu-bar-width: 1px;
+    /* animations */
     --menu-overlay-duration: 0.5s;
     --menu-reveal-duration: 0.5s;
     --menu-reveal-delay: 0.25s;
     --menu-scale-duration: 0.5s;
     --menu-scale-offset: 2.0s;
     --menu-scale-delay: 0.15s;    
-    --menu-hover-duration: 0.3s;
-    --menu-bar-width: 1px;
+    --menu-hover-duration: 0.3s;    
 }
+/*----------------------*/
 
-.home {
-    /* home theme */
+section.home {
+    /* colors */
+    --home-background-color: var(--main-background-color);
+    --home-text-color: var(--main-text-color);
+    --home-primary-color: var(--main-primary-color);
+    --home-secondary-color: var(--main-secondary-color);
+    /* margin and padding */
+    --home-padding-left : 2rem;
+    --home-padding-bottom: 0.3rem;
+    /* fonts */
     --home-stroke-size: 1.5px;
+    /* sizing */    
+    --home-chevron-size: 5rem;
+    --home-chevron-stroke: var(--main-stroke-width);
+    /* animations */    
     --home-cursor-period: 0.7s;
     --home-reveal-duration: 0.3s;
     --home-reveal-delay: 0.1s;
-    --home-underline-duration: 0.3s;
-    --home-chevron-size: 5rem;
-    --home-chevron-stroke: var(--main-stroke-width);
-    --home-chevron-bottom: 0.3rem;
+    --home-underline-duration: 0.3s;    
 }
 
-.work{
-    /* work */
+section.work{
+    /* colors */
+    --work-primary-color: var(--main-primary-color);
+    --work-back-color: var(--main-lightdark-color);
+    /* margin and padding */
+    --work-padding-left: var(--main-padding-left);
+    /* animations */
     --work-reveal-duration: 0.3s;
     --work-reveal-delay: 0.1s;
 }
 
 footer{
-    /* footer theme */
-    --footer-bg-color: hsl(220, 20%, 05%);
-    --footer-text-color: #FFFFFF;
-    --footer-primary-color: #20DFDF;
-    --footer-secondary-color: #DF209F;
+    /* colors */
+    --footer-background-color: var(--main-verydark-color);
+    --footer-text-color: var(--main-text-color);
+    --footer-primary-color: var(--main-primary-color);
+    --footer-secondary-color: var(--main-secondary-color);
+    /* sizes */
+    --footer-bar-width: 1px; 
+    /* animations */  
     --footer-reveal-duration: 0.5s;
     --footer-reveal-delay: 0.25s;
     --footer-scale-duration: 0.5s;
     --footer-scale-offset: 0.5s;
     --footer-scale-delay: 0.15s;    
     --footer-hover-duration: 0.3s;
-    --footer-bar-width: 1px;
 }

@@ -35,7 +35,7 @@ STYLE
 }
   
 .flip-card .front{
-    background: hsl(221, 20%, 20%);
+    background: var(--work-back-color);
     cursor: pointer;
 }
 /*----------------------*/
@@ -72,7 +72,7 @@ CONTENT
 .flip-card p{
     font-weight: 600;
     font-size: 4rem;
-    color: var(--main-bg-color);
+    color: var(--main-background-color);
 }
 
 .flip-card a{

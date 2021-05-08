@@ -8,7 +8,7 @@ MENU PAGE
     transform : translateY(-100%);
     width: 100vw;
     position: fixed;
-    background-color: var(--menu-bg-color);
+    background-color: var(--menu-background-color);
     color: var(--menu-primary-color);   
     font-style: normal;
     font-weight: 400;
@@ -207,7 +207,7 @@ MENU SOCIALS
 
     @keyframes borderEntrance {
         from {
-            border-top: var(--menu-bar-width) solid var(--menu-bg-color) ;
+            border-top: var(--menu-bar-width) solid var(--menu-background-color) ;
         }
         to {
             border-top: var(--menu-bar-width) solid var(--menu-primary-color) ;

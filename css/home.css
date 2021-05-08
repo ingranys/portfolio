@@ -18,11 +18,11 @@ BASIC
 }
 
 .home h1, .home h2{
-    padding-left: 2rem;
+    padding-left: var(--home-padding-left);
 }
 
 .home h1 span:last-child{
-    color: var(--main-primary-color);
+    color: var(--home-primary-color);
     position: relative;
 }
 
@@ -31,19 +31,19 @@ BASIC
     font-size: 4.5rem;
     width: min(35ch,90vw);
     /*https://css-tricks.com/adding-stroke-to-web-text/*/
-    color: var(--main-bg-color);
+    color: var(--home-background-color);
     text-shadow:
-    calc(-1*var(--home-stroke-size)) calc(-1*var(--home-stroke-size)) 0 var(--main-text-color),  
-    var(--home-stroke-size) calc(-1*var(--home-stroke-size)) 0 var(--main-text-color),
-    calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--main-text-color),
-    var(--home-stroke-size) var(--home-stroke-size) 0 var(--main-text-color);
+    calc(-1*var(--home-stroke-size)) calc(-1*var(--home-stroke-size)) 0 var(--home-text-color),  
+    var(--home-stroke-size) calc(-1*var(--home-stroke-size)) 0 var(--home-text-color),
+    calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--home-text-color),
+    var(--home-stroke-size) var(--home-stroke-size) 0 var(--home-text-color);
 }
 /*----------------------*/
 
 /*==== cursor ====*/
 .home h2::after {
     content: "";
-    border-right: 0.5rem solid var(--main-secondary-color);
+    border-right: 0.5rem solid var(--home-secondary-color);
     position: relative;
     left: 0.3rem;
     animation: cursorBlink var(--home-cursor-period) infinite;
@@ -69,12 +69,12 @@ BASIC
     position: absolute;
     left:50%;  
     transform: translateX(-50%);
-    bottom: var(--home-chevron-bottom);
+    bottom: var(--home-padding-bottom);
     stroke-width: var(--home-chevron-stroke)px;
 }
 
 .section-down:hover svg{
-    color: var(--main-secondary-color);
+    color: var(--home-secondary-color);
 }
 /*----------------------*/
 
@@ -118,7 +118,7 @@ BASIC
     position: absolute;
     bottom: -1rem;
     height: 0.7rem;   
-    background: var(--main-primary-color);
+    background: var(--home-primary-color);
     right: 0;
     width: 0;
     transition: width var(--home-underline-duration) ease-in-out;

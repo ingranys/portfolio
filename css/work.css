@@ -7,7 +7,7 @@ BASIC
 .work h1{
     font-weight: 700;
     font-size: 8rem;
-    color: var(--main-primary-color);
+    color: var(--work-primary-color);
     padding-top: var(--main-strip-height);
     padding-bottom: 1.5rem;
 }
@@ -19,7 +19,7 @@ BASIC
 }
 
 .work h1, .work h2{
-    padding-left: var(--main-padding-left);
+    padding-left: var(--work-padding-left);
 }
 /*----------------------*/
 

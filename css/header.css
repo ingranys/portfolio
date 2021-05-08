@@ -12,7 +12,7 @@ HEADER
     padding-top: var(--header-padding-top);
     padding-right: var(--header-padding-right);  
 
-    background-color: var(--main-bg-color) ;
+    background-color: var(--header-background-color) ;
 
     z-index:100;
 }
@@ -78,7 +78,7 @@ HEADER TOGGLE
 
 /*==== menu toggle colors ====*/
 .header:not(.active) .toggle .bar{
-    background-color: var(--main-text-color);
+    background-color: var(--header-text-color);
 }
 
 .header.active .toggle .bar{
@@ -87,7 +87,7 @@ HEADER TOGGLE
 
 @media(hover: hover) and (pointer: fine) {
     .header:not(.active) .toggle:hover .bar{
-        background-color: var(--main-secondary-color);
+        background-color: var(--header-secondary-color);
     }
 
     .header.active .toggle:hover .bar{
