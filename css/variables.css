@@ -9,7 +9,8 @@ VARIABLES
     --main-verydark-color: hsl(220, 20%, 05%);
     --main-mediumdark-color: hsl(220, 20%, 10%);
     --main-lightdark-color: hsl(220, 20%, 20%);
-    --main-text-color: hsl(0, 0%, 100%);
+    --main-shadow-color: hsl(0,0%,0%);
+    --main-focal-color: hsl(0, 0%, 100%);
     --main-primary-color: hsl(180, 75%, 50%);
     --main-secondary-color: hsl(320, 75%, 50%);
     --main-tertiary-color: hsl(40, 75%, 50%);
@@ -25,8 +26,8 @@ header, nav {
     /*==== header ====*/
     /* colors */
     --header-background-color : var(--main-background-color);
-    --header-shadow-color: hsl(0, 0%, 0%);
-    --header-text-color: var(--main-text-color);
+    --header-shadow-color: var(--main-shadow-color);
+    --header-focal-color: var(--main-focal-color);
     --header-secondary-color: var(--main-secondary-color); 
     /* margin and padding */
     --header-padding-right : 2rem;
@@ -44,7 +45,7 @@ header, nav {
     /*==== menu ====*/
     /* colors */
     --menu-background-color: hsl(320, 75%, 15%);
-    --menu-text-color: hsl(0, 0%, 100%);
+    --menu-focal-color: hsl(0, 0%, 100%);
     --menu-primary-color: hsl(320, 75%, 30%);
     --menu-secondary-color: hsl(320, 30%, 30%);
     /* sizing */
@@ -56,14 +57,14 @@ header, nav {
     --menu-scale-duration: 0.5s;
     --menu-scale-offset: 2.0s;
     --menu-scale-delay: 0.15s;    
-    --menu-hover-duration: 0.3s;    
+    --menu-hover-duration: 0.3s;   
+    /*----------------------*/ 
 }
-/*----------------------*/
 
 section.home {
     /* colors */
     --home-background-color: var(--main-background-color);
-    --home-text-color: var(--main-text-color);
+    --home-focal-color: var(--main-focal-color);
     --home-primary-color: var(--main-primary-color);
     --home-secondary-color: var(--main-secondary-color);
     /* margin and padding */
@@ -82,20 +83,39 @@ section.home {
 }
 
 section.work{
+    /*==== work section ====*/
     /* colors */
+    --work-shadow-color: var(--main-shadow-color);
+    --work-focal-color: var(--main-focal-color);
     --work-primary-color: var(--main-primary-color);
-    --work-back-color: var(--main-lightdark-color);
     /* margin and padding */
     --work-padding-left: var(--main-padding-left);
     /* animations */
     --work-reveal-duration: 0.3s;
     --work-reveal-delay: 0.1s;
+    /*----------------------*/
+
+    /*==== grid ====*/
+    /* colors */
+    --grid-hide-color: var(--main-lightdark-color);
+    --grid-text-color: var(--main-background-color);
+    /* margin and padding */
+    --grid-side-padding: 1rem;
+    --grid-between-padding: 0.5rem;
+    /* animations */
+    --grid-link-duration: 0.2s;
+    --grid-link-delay: 0.3s;
+    --grid-entrance-duration: 0.5s;
+    --grid-hover-duration: 0.3s;
+    --grid-flip-duration: 0.5s;
+    --grid-anim-delay: 0.1s;
+    /*----------------------*/
 }
 
 footer{
     /* colors */
     --footer-background-color: var(--main-verydark-color);
-    --footer-text-color: var(--main-text-color);
+    --footer-focal-color: var(--main-focal-color);
     --footer-primary-color: var(--main-primary-color);
     --footer-secondary-color: var(--main-secondary-color);
     /* sizes */
