@@ -38,7 +38,7 @@ FOOTER COPYRIGHT
     display: flex;
     align-items: center;
 
-    color: var(--footer-text-color);
+    color: var(--footer-focal-color);
 }
 
 .copyright span:last-child{
@@ -61,7 +61,7 @@ FOOTER SOCIALS
     position: relative;
     width: 3rem ;
     margin: 0 1.5rem;
-    color: var(--footer-text-color);
+    color: var(--footer-focal-color);
     transition: color var(--footer-hover-delay);   
 }
 

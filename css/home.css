@@ -33,10 +33,10 @@ BASIC
     /*https://css-tricks.com/adding-stroke-to-web-text/*/
     color: var(--home-background-color);
     text-shadow:
-    calc(-1*var(--home-stroke-size)) calc(-1*var(--home-stroke-size)) 0 var(--home-text-color),  
-    var(--home-stroke-size) calc(-1*var(--home-stroke-size)) 0 var(--home-text-color),
-    calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--home-text-color),
-    var(--home-stroke-size) var(--home-stroke-size) 0 var(--home-text-color);
+    calc(-1*var(--home-stroke-size)) calc(-1*var(--home-stroke-size)) 0 var(--home-focal-color),  
+    var(--home-stroke-size) calc(-1*var(--home-stroke-size)) 0 var(--home-focal-color),
+    calc(-1*var(--home-stroke-size)) var(--home-stroke-size) 0 var(--home-focal-color),
+    var(--home-stroke-size) var(--home-stroke-size) 0 var(--home-focal-color);
 }
 /*----------------------*/
 

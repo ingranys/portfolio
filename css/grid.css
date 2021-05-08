@@ -31,11 +31,11 @@ STYLE
 }
 
 .flip-card .back{
-    background-color: var(--main-text-color);
+    background-color: var(--work-focal-color);
 }
   
 .flip-card .front{
-    background: var(--work-back-color);
+    background: var(--grid-hide-color);
     cursor: pointer;
 }
 /*----------------------*/
@@ -349,7 +349,7 @@ SMALL SCREENS
 /*==== cards > small screen ====*/
 @media only screen and (max-width: 600px) {
     .flip-card .front{
-        background-color: var(--main-text-color);
+        background-color: var(--work-focal-color);
     }
 
     .flip-card .front svg{

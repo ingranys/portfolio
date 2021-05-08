@@ -78,7 +78,7 @@ HEADER TOGGLE
 
 /*==== menu toggle colors ====*/
 .header:not(.active) .toggle .bar{
-    background-color: var(--header-text-color);
+    background-color: var(--header-focal-color);
 }
 
 .header.active .toggle .bar{
@@ -91,7 +91,7 @@ HEADER TOGGLE
     }
 
     .header.active .toggle:hover .bar{
-        background-color: var(--menu-text-color);
+        background-color: var(--menu-focal-color);
     }
 }
 /*----------------------*/

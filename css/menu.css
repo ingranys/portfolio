@@ -80,7 +80,7 @@ MENU PAGE
 
 /*==== menu items/ over effect ====*/
 .menu-content a:hover{
-    color: var(--menu-text-color);
+    color: var(--menu-focal-color);
 }
 
 .menu-content a:before{
@@ -142,7 +142,7 @@ MENU SOCIALS
 }
 
 .menu-socials svg:hover{
-    color: var(--menu-text-color);       
+    color: var(--menu-focal-color);       
 }
 /*----------------------*/
 

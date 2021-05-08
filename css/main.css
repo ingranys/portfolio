@@ -24,7 +24,7 @@ html{
 
 body{
     background: var(--main-background-color);
-    color: var(--main-text-color);
+    color: var(--main-focal-color);
     font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
 }
