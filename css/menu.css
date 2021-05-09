@@ -50,21 +50,21 @@ MENU PAGE
 /*----------------------*/
 
 /*==== menu items/ text reveal ====*/
-.menu.active a{
+.menu.active .menu-content a{
     animation: revealItem var(--menu-reveal-duration);
     animation-fill-mode: backwards;  
 }
 
-.menu.active li:nth-child(1) a{
+.menu.active .menu-content li:nth-child(1) a{
     animation-delay: calc(var(--menu-reveal-duration) + (1 * var(--menu-reveal-delay))); 
 }
-.menu.active li:nth-child(2) a{
+.menu.active .menu-content li:nth-child(2) a{
     animation-delay: calc(var(--menu-reveal-duration) + (2 * var(--menu-reveal-delay)));
 }
-.menu.active li:nth-child(3) a{ 
+.menu.active .menu-content li:nth-child(3) a{ 
     animation-delay: calc(var(--menu-reveal-duration) + (3 * var(--menu-reveal-delay)));
 }
-.menu.active li:nth-child(4) a{ 
+.menu.active .menu-content li:nth-child(4) a{ 
     animation-delay: calc(var(--menu-reveal-duration) + (4 * var(--menu-reveal-delay)));
 }
 
@@ -134,6 +134,10 @@ MENU SOCIALS
 #######################################################
 */
 /*==== menu socials ====*/
+.menu-socials li{
+    line-height: 0;
+}
+
 .menu-socials svg{
     position: relative;
     width: 3rem ;
@@ -153,13 +157,13 @@ MENU SOCIALS
    animation-fill-mode: backwards;
 }
 
-.menu.active .menu-socials a:nth-child(1) svg { 
+.menu.active .menu-socials li:nth-child(1) svg { 
     animation-delay: calc(var(--menu-scale-offset) + (1 * var(--menu-scale-delay))); 
 }
-.menu.active .menu-socials a:nth-child(2) svg{
+.menu.active .menu-socials li:nth-child(2) svg{
     animation-delay: calc(var(--menu-scale-offset) + (2 * var(--menu-scale-delay)));
 }
-.menu.active .menu-socials a:nth-child(3) svg {
+.menu.active .menu-socials li:nth-child(3) svg {
     animation-delay: calc(var(--menu-scale-offset) + (3 * var(--menu-scale-delay)));
 }
 

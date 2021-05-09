@@ -5,7 +5,7 @@ FOOTER
 */
 .footer{
     width: 100vw;
-    padding: 2rem 5rem;
+    padding: 3rem 5rem 3rem 2rem;
     margin-top: 2rem;
 
     background-color: var(--footer-background-color) ;
@@ -57,6 +57,10 @@ FOOTER SOCIALS
     justify-content: flex-end; 
 }
 
+.footer-socials li{
+    line-height: 0;
+}
+
 .footer-socials svg{
     position: relative;
     width: 3rem ;
@@ -67,6 +71,20 @@ FOOTER SOCIALS
 
 .footer-socials svg:hover{
     color: var(--footer-secondary-color);    
+}
+/*----------------------*/
+
+
+/*
+#######################################################
+LARGE SCREENS
+#######################################################
+*/
+/*==== more than 600px ====*/ 
+@media only screen and (min-width: 600px) {  
+    .footer-socials li:last-child svg{
+        margin-right: 0;
+    }
 }
 /*----------------------*/
 
