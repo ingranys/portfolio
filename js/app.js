@@ -235,7 +235,8 @@ var typed = new Typed('#typed', {
   backDelay: parseInt(elementBackDelay),
   showCursor: false,
   loop: true,
-  onBegin: (self) => {console.log("Typed.js configuration loaded.")},
-});
+  onReset: (self) => {console.log("Typed.js configuration loaded.");}
+}).reset();
+
 
 
