@@ -102,6 +102,10 @@ section.work{
     /* margin and padding */
     --grid-side-padding: 1rem;
     --grid-between-padding: 0.5rem;
+    /* sizing */
+    --grid-card-small: 15rem;
+    --grid-card-medium: 20rem;
+    --grid-card-large: 30rem;
     /* animations */
     --grid-link-duration: 0.2s;
     --grid-link-delay: 0.3s;

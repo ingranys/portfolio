@@ -8,8 +8,8 @@ STYLE
     display: grid;
     padding: 0 var(--grid-side-padding);
     gap: var(--grid-between-padding);
-    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
-    grid-auto-rows: 30rem;
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-card-medium),1fr));
+    grid-auto-rows: var(--grid-card-medium);
 }
 /*----------------------*/
 
@@ -209,8 +209,8 @@ FLIP ANIMATION
 /* hover > extend logo disc */
 /* cancel if switching to back position */
 .flip-card:not(.toback):hover .front::before{
-    width: 17rem;
-    height: 17rem;
+    width: calc(0.6*var(--grid-card-medium));
+    height: calc(0.6*var(--grid-card-medium));
     opacity: 1;
     transition: var(--grid-hover-duration) ease-out;
 }
@@ -274,6 +274,78 @@ FLIP ANIMATION
     animation: hideBack var(--grid-flip-duration) forwards;      
 }
 /*----------------------*/
+
+
+/*
+#######################################################
+LARGE SCREENS
+#######################################################
+*/
+@media only screen and (min-width: 1000px) {
+    /*==== grid > large screen ====*/
+    .work-grid{
+        padding: 0 var(--grid-side-padding);
+        gap: var(--grid-between-padding);
+        grid-template-columns: repeat(auto-fit, minmax(var(--grid-card-large),1fr));
+        grid-auto-rows: var(--grid-card-large);
+    }
+    /*----------------------*/
+
+    /*==== cards > large screen ====*/
+    .flip-card:not(.toback):hover .front::before{
+        width: calc(0.6*var(--grid-card-large));;
+        height: calc(0.6*var(--grid-card-large));;
+    }
+
+    .flip-card p{
+        font-size: 5rem;
+    }
+    
+    .flip-card a{
+        font-size: 2.5rem;
+    }
+    /*----------------------*/
+}
+
+
+/*
+#######################################################
+SMALL SCREENS
+#######################################################
+*/
+@media only screen and (max-width: 600px) {
+    /*==== grid > small screen ====*/
+    .work-grid{
+        padding: 0 var(--grid-side-padding);
+        gap: var(--grid-between-padding);
+        grid-template-columns: repeat(auto-fit, minmax(var(--grid-card-small),1fr));
+        grid-auto-rows: var(--grid-card-small);
+    }
+    /*----------------------*/
+
+    /*==== cards > small screen ====*/
+    .flip-card .front{
+        background-color: var(--work-focal-color);
+    }
+
+    .flip-card .front svg{
+        filter: grayscale(0%);
+    }
+
+    .flip-card:not(.toback):hover .front::before{
+        width: calc(0.6*var(--grid-card-small));;
+        height: calc(0.6*var(--grid-card-small));;
+    }
+
+    .flip-card p{
+        font-size: 3rem;
+    }
+    
+    .flip-card a{
+        font-size: 1.5rem;
+    }
+    /*----------------------*/
+}
 
 
 /*
@@ -345,47 +417,5 @@ KEYFRAMES
     to {
         transform: scale(1.05);
     }      
-}
-/*----------------------*/
-
-
-/*
-#######################################################
-SMALL SCREENS
-#######################################################
-*/
-/*==== grid > small screen ====*/
-@media only screen and (max-width: 600px) {
-    .work-grid{
-        padding: 0 1rem;
-        gap: 0.5rem;
-        grid-template-columns: repeat(auto-fit, minmax(15rem,1fr));
-        grid-auto-rows: 15rem;
-    }
-}
-/*----------------------*/
-
-/*==== cards > small screen ====*/
-@media only screen and (max-width: 600px) {
-    .flip-card .front{
-        background-color: var(--work-focal-color);
-    }
-
-    .flip-card .front svg{
-        filter: grayscale(0%);
-    }
-
-    .flip-card:not(.toback):hover .front::before{
-        width: 10rem;
-        height: 10rem;
-    }
-
-    .flip-card p{
-        font-size: 3rem;
-    }
-    
-    .flip-card a{
-        font-size: 1.5rem;
-    }
 }
 /*----------------------*/
