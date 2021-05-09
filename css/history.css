@@ -1,0 +1,217 @@
+/*
+#######################################################
+HISTORY
+#######################################################
+*/
+/*==== style ====*/
+.history li{
+    position: relative;
+}
+
+.history a{
+    /*display: inline-block;*/
+    font-weight: 800;
+    font-size: 8rem;
+    padding: 5rem var(--history-side-padding);
+    /*https://css-tricks.com/adding-stroke-to-web-text/*/
+    color: var(--history-background-color);
+}
+
+.history img{
+    display: none;
+    position:fixed; 
+    pointer-events: none;
+}
+
+.history li:hover{
+    z-index: 1;
+}
+
+.history li:hover img{
+    display: block;
+}
+
+.history li.lock{
+    opacity: 0;
+}
+/*----------------------*/
+
+
+/*
+#######################################################
+MEDIUM SCREENS
+#######################################################
+*/
+@media only screen and (min-width: 600px) {
+    /*==== history > medium screen ====*/
+    .history li.left{
+        text-align: left;
+    }
+
+    .history li.right{
+        text-align: right;
+    }
+
+    .history img{
+        height : 50%;
+    }
+    /*----------------------*/
+
+    /*==== history / entrance > small screen ====*/
+    .history li.leftEntrance:not(.lock) a{
+        animation: 
+            leftEntrance 
+            var(--history-entrance-duration) 
+            var(--history-entrance-delay)
+            ease-out backwards;
+    }
+
+    .history li.rightEntrance:not(.lock) a{
+        animation: 
+            rightEntrance 
+            var(--history-entrance-duration)
+            var(--history-entrance-delay)
+            ease-out backwards;
+    }
+    /*----------------------*/
+
+    /*==== hover effect ====*/
+    .history a:before, .history a:after{
+        content: attr(data-text);
+        margin-right: -100%;
+        position: absolute;
+        transition: 0.3s;
+        text-shadow:
+        calc(-1*var(--history-stroke-size)) calc(-1*var(--history-stroke-size)) 0 var(--work-focal-color),  
+        var(--history-stroke-size) calc(-1*var(--history-stroke-size)) 0 var(--work-focal-color),
+        calc(-1*var(--history-stroke-size)) var(--history-stroke-size) 0 var(--work-focal-color),
+        var(--history-stroke-size) var(--history-stroke-size) 0 var(--work-focal-color);
+    }
+    /*----------------------*/
+
+    /*==== hover effect / right leave ====*/
+    .history li.rightLeave a:before, 
+    .history li.rightLeave a:after{
+        transform: translateX(-100%);
+    }
+
+    .history li.rightLeave a:hover:before, 
+    .history li.rightLeave a:hover:after{
+        transform: translateX(0%);
+    }
+
+    .history li.rightLeave a:before{    
+        color: #2e91af;
+        opacity :0;
+    }
+
+    .history li.rightLeave a:hover:before{
+        opacity: 1;
+    }
+
+    .history li.rightLeave a:after{
+        /*-webkit-text-stroke: 1.5px #ffffff;*/
+        opacity: 1;
+    }
+
+    .history li.rightLeave a:hover:after{
+        opacity: 0;
+    }
+    /*----------------------*/
+
+    /*==== hover effect / left leave ====*/
+    .history li.leftLeave :before, 
+    .history li.leftLeave a:after{
+        transform: translateX(0%);
+    }
+
+    .history li.leftLeave a:hover:before, 
+    .history li.leftLeave a:hover:after{
+        transform: translateX(-100%);
+    }
+
+    .history li.leftLeave a:after{    
+        color: #2e91af;
+        opacity :0;
+    }
+
+    .history li.leftLeave a:hover:after{
+        opacity: 1;
+    }
+
+    .history li.leftLeave a:before{
+        /*-webkit-text-stroke: 1.5px #ffffff;*/
+        opacity: 1;
+    }
+
+    .history li.leftLeave a:hover:before{
+        opacity: 0;
+    }
+    /*----------------------*/
+}
+
+
+/*
+#######################################################
+SMALL SCREENS
+#######################################################
+*/
+@media only screen and (max-width: 600px) {
+    /*==== history > small screen ====*/
+    .history a{
+        font-size: 5rem;
+        text-shadow:
+        calc(-1*var(--history-stroke-size)) calc(-1*var(--history-stroke-size)) 0 var(--work-focal-color),  
+        var(--history-stroke-size) calc(-1*var(--history-stroke-size)) 0 var(--work-focal-color),
+        calc(-1*var(--history-stroke-size)) var(--history-stroke-size) 0 var(--work-focal-color),
+        var(--history-stroke-size) var(--history-stroke-size) 0 var(--work-focal-color);
+    }
+
+    .history img{
+        width : 70%;
+    }
+    /*----------------------*/
+
+    /*==== history / entrance > small screen ====*/
+    .history li:not(.lock) a{
+        animation: 
+            leftEntrance 
+            var(--history-entrance-duration) 
+            var(--history-entrance-delay)
+            ease-out backwards;
+    }
+    /*----------------------*/
+
+    /*==== history / hover effect > small screen ====*/
+    .history li:hover a{
+        color: var(--work-primary-color);
+    }
+}
+
+
+/*
+#######################################################
+KEYFRAMES
+#######################################################
+*/
+@keyframes leftEntrance {
+    from {
+        opacity: 0;       
+        transform: translateX(-100%);     
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }      
+}
+
+@keyframes rightEntrance {
+    from { 
+        opacity: 0;       
+        transform: translateX(+100%);     
+    }
+    to {
+        opacity: 1; 
+        transform: translateX(0%);
+    }      
+}

@@ -85,7 +85,6 @@ section.home {
 section.work{
     /*==== work section ====*/
     /* colors */
-    --work-background-color: var(--main-background-color);
     --work-shadow-color: var(--main-shadow-color);
     --work-focal-color: var(--main-focal-color);
     --work-primary-color: var(--main-primary-color);
@@ -93,7 +92,6 @@ section.work{
     /* margin and padding */
     --work-padding-left: var(--main-padding-left);
     /* fonts */
-    --work-stroke-size: 1.5px;
     /* animations */
     --work-reveal-duration: 0.3s;
     --work-reveal-delay: 0.1s;
@@ -118,6 +116,19 @@ section.work{
     --grid-hover-duration: 0.3s;
     --grid-flip-duration: 0.5s;
     --grid-anim-delay: 0.1s;
+    /*----------------------*/
+
+    /*==== history ====*/
+    /* colors */
+    --history-background-color: var(--main-background-color);
+    /* margin and padding */
+    --history-side-padding: 2rem;
+    /* fonts */
+    --history-stroke-size: 1.5px;
+    /* sizing */
+    /* animations */
+    --history-entrance-duration: 1.0s;
+    --history-entrance-delay: 0.3s;
     /*----------------------*/
 }
 

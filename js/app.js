@@ -259,12 +259,14 @@ var typed = new Typed('#typed', {
 HISTORY
 #######################################################
 */
+/* get history items*/
 const historyItems = document.querySelectorAll('.history > li > a');
 
+/* display preview image when hovering */
 historyItems.forEach(historyItem => {
   historyItem.addEventListener('mousemove', e => {
-    var xOffset = 100;
-    var yOffset = 50;
+    var xOffset = 30;
+    var yOffset = 30;
 
     var x0 = e.clientX;
     var y0 = e.clientY;
@@ -276,18 +278,21 @@ historyItems.forEach(historyItem => {
     var previewHeight = previewImg.offsetHeight;
     var previewWidth = previewImg.offsetWidth;
 
-    var viewportWidth = document.documentElement.clientWidth;
+    const previewRight = previewParent.classList.contains('right');
+    const previewLeft = previewParent.classList.contains('left');
 
-    const previewRight = window.getComputedStyle(previewParent).textAlign.includes("right");
+    var viewportWidth = document.documentElement.clientWidth;
 
     if (viewportWidth < 600){
       var x = viewportWidth/2 - previewWidth/2;
       var y = y0 + yOffset;
+    } else if (previewLeft){
+      var x = x0 + xOffset;
+      var y = y0 + yOffset;
     } else if (previewRight) {
       var x = x0 - previewWidth - xOffset;
-      var y = y0 - previewHeight/2;
+      var y = y0 + yOffset;
     } else {
-      var x = x0 + xOffset;
       var y = y0 - previewHeight/2;
     }
     previewImg.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
