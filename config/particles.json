@@ -1,9 +1,9 @@
 {
     "particles": {
         "number": {
-            "value": 15,
+            "value": 100,
             "density": {
-                "enable": true,
+                "enable": false,
                 "value_area": 100
             }
         },
@@ -109,5 +109,5 @@
             }
         }
     },
-    "retina_detect": false
+    "retina_detect": true
 }

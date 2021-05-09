@@ -184,19 +184,22 @@ adaptParticlesParams = function(tag_id, params){
   const particlesElement = document.querySelector('#'+tag_id);
   var size = Math.min(particlesElement.clientWidth,particlesElement.clientHeight);
 
-  /*device pixel ratio can mess with radius value*/
-  var pixelRatio = 1.0;
-  if (params.retina_detect){    
-    pixelRatio = window.devicePixelRatio;
-  }
+  /*device pixel ratio can mess settings*/
+  pixelRatio = window.devicePixelRatio;
+
   /* adjust repulse radius to canvas size */
-  var repulseDistance = 0.5 * 0.9 * size / pixelRatio ;
+  var repulseDistance = 0.5 * 0.9 * size ;
   params.interactivity.modes.repulse.distance = repulseDistance;
 
   /* adjust density for small devices */
-  var density = params.particles.number.value;  
-  if (window.innerWidth < 600 && params.retina_detect) {
-    params.particles.number.value = 0.7*density;
+  var particlesDensity = 1 / 5000 ;
+  var particlesArea = particlesElement.clientWidth * particlesElement.clientHeight;
+  var particlesNumber = particlesDensity * particlesArea;
+  params.particles.number.value = particlesNumber;
+
+  /* retina detect must be enabled for better performance */
+  if (!params.retina_detect){
+    console.log('WARNING: Particles.js retina_detect feature is disabled.')
   }
 
   return params;
