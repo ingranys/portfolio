@@ -7,7 +7,7 @@ MENU
 const toggle = document.querySelector('.toggle');
 const menu = document.querySelector('.menu');
 const header = document.querySelector('.header');
-const items = document.querySelectorAll('.menu-content > li > a');
+const menuItems = document.querySelectorAll('.menu-content > li > a');
 
 /* compute header delay */
 const style = getComputedStyle(document.body);
@@ -29,9 +29,9 @@ toggle.addEventListener('click', () => {
 })
 
 /* scroll to section on click */
-items.forEach(item => {
-  item.addEventListener('click', (event) => {
-    let anchor = item.getAttribute('data-text');
+menuItems.forEach(menuItem => {
+  menuItem.addEventListener('click', (event) => {
+    let anchor = menuItem.getAttribute('data-text');
 
     if (menu.classList.contains('active')) {
       menu.classList.remove('active');
@@ -62,39 +62,42 @@ const convertImages = (query, callback) => {
     const images = document.querySelectorAll(query);
   
     images.forEach(image => {
-      fetch(image.src)
-      .then(res => res.text())
-      .then(data => {
-        const parser = new DOMParser();
-        /* fetch raw svg from file */
-        const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
-  
-        /* retrive attributes*/
-        if (image.id) svg.id = image.id;
-        if (image.className) svg.classList = image.classList;
-        if (image.title) {
-          var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
-          title.textContent = image.title;
-          svg.appendChild(title);
-        }
+      if (image.src.includes('.svg')){
 
-        if (image.getAttribute('link')){
-          /* put inside an anchor whe link is required and replace image */
-          var link = document.createElement('a');
-          link.setAttribute('href', image.getAttribute('link'));
-          if (image.getAttribute('target')){
-            link.setAttribute('target', image.getAttribute('target'));
+        fetch(image.src)
+        .then(res => res.text())
+        .then(data => {
+          const parser = new DOMParser();
+          /* fetch raw svg from file */
+          const svg = parser.parseFromString(data, 'image/svg+xml').querySelector('svg');
+    
+          /* retrive attributes*/
+          if (image.id) svg.id = image.id;
+          if (image.className) svg.classList = image.classList;
+          if (image.title) {
+            var title = document.createElementNS('http://www.w3.org/2000/svg', 'title');
+            title.textContent = image.title;
+            svg.appendChild(title);
           }
-          link.appendChild(svg);  
-          image.parentNode.replaceChild(link, image);  
-        } else {
-          /* replace image with generated svg */ 
-          image.parentNode.replaceChild(svg, image);
-        }
-        
-      })
-      .then(callback)
-      .catch(error => console.error(error))
+
+          if (image.getAttribute('link')){
+            /* put inside an anchor whe link is required and replace image */
+            var link = document.createElement('a');
+            link.setAttribute('href', image.getAttribute('link'));
+            if (image.getAttribute('target')){
+              link.setAttribute('target', image.getAttribute('target'));
+            }
+            link.appendChild(svg);  
+            image.parentNode.replaceChild(link, image);  
+          } else {
+            /* replace image with generated svg */ 
+            image.parentNode.replaceChild(svg, image);
+          }
+          
+        })
+        .then(callback)
+        .catch(error => console.error(error))
+      }
     });
 }
   
@@ -224,7 +227,6 @@ window.onload = loadParticles;
 */
 
 
-
 /*
 #######################################################
 TYPED
@@ -252,4 +254,41 @@ var typed = new Typed('#typed', {
 }).reset();
 
 
+/*
+#######################################################
+HISTORY
+#######################################################
+*/
+const historyItems = document.querySelectorAll('.history > li > a');
+
+historyItems.forEach(historyItem => {
+  historyItem.addEventListener('mousemove', e => {
+    var xOffset = 100;
+    var yOffset = 50;
+
+    var x0 = e.clientX;
+    var y0 = e.clientY;
+
+    var previewId = historyItem.getAttribute('data-id');
+    var previewImg = document.querySelector(previewId + ' > img');
+    var previewParent = document.querySelector(previewId);
+    
+    var previewHeight = previewImg.offsetHeight;
+    var previewWidth = previewImg.offsetWidth;
+
+    const previewRight = window.getComputedStyle(previewParent).textAlign.includes("right");
+
+    if (document.documentElement.clientWidth < 600){
+      var x = x0 - previewWidth/2;
+      var y = y0 + yOffset;
+    } else if (previewRight) {
+      var x = x0 - previewWidth - xOffset;
+      var y = y0 - previewHeight/2;
+    } else {
+      var x = x0 + xOffset;
+      var y = y0 - previewHeight/2;
+    }
+    previewImg.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
+  })
+})
 
