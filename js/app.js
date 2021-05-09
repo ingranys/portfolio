@@ -276,10 +276,12 @@ historyItems.forEach(historyItem => {
     var previewHeight = previewImg.offsetHeight;
     var previewWidth = previewImg.offsetWidth;
 
+    var viewportWidth = document.documentElement.clientWidth;
+
     const previewRight = window.getComputedStyle(previewParent).textAlign.includes("right");
 
-    if (document.documentElement.clientWidth < 600){
-      var x = x0 - previewWidth/2;
+    if (viewportWidth < 600){
+      var x = viewportWidth/2 - previewWidth/2;
       var y = y0 + yOffset;
     } else if (previewRight) {
       var x = x0 - previewWidth - xOffset;
