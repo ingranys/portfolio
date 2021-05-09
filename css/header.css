@@ -9,8 +9,7 @@ HEADER
 
     display: flex;
     justify-content: space-between;
-    padding-top: var(--header-padding-top);
-    padding-right: var(--header-padding-right);  
+    padding: var(--header-padding-vertical) var(--header-padding-horizontal);
 
     background-color: var(--header-background-color) ;
 

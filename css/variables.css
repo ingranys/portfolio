@@ -30,8 +30,8 @@ header, nav {
     --header-focal-color: var(--main-focal-color);
     --header-secondary-color: var(--main-secondary-color); 
     /* margin and padding */
-    --header-padding-right : 2rem;
-    --header-padding-top : 1rem;
+    --header-padding-horizontal : 2rem;
+    --header-padding-vertical : 1rem;
     /* sizing */
     --header-element-size: 5rem;
     --header-bar-ratio: 0.05;
