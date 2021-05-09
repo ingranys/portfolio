@@ -28,6 +28,8 @@ STYLE
     align-items: center;
 
     text-align: center;
+
+    cursor: pointer;
 }
 
 .flip-card .back{
@@ -35,8 +37,7 @@ STYLE
 }
   
 .flip-card .front{
-    background: var(--grid-hide-color);
-    cursor: pointer;
+    background: var(--grid-hide-color);    
 }
 /*----------------------*/
 
@@ -73,6 +74,7 @@ CONTENT
     font-weight: 600;
     font-size: 4rem;
     color: var(--grid-text-color);
+    cursor: text;
 }
 
 .flip-card a{
