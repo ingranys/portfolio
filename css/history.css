@@ -23,12 +23,9 @@ HISTORY
     pointer-events: none;
 }
 
-.history li:hover{
+.history li:hover,
+.history li.touched{
     z-index: 1;
-}
-
-.history li:hover img{
-    display: block;
 }
 
 .history li.lock{
@@ -44,6 +41,10 @@ MEDIUM SCREENS
 */
 @media only screen and (min-width: 600px) {
     /*==== history > medium screen ====*/
+    .history li{
+        text-align: center;
+    }
+
     .history li.left{
         text-align: left;
     }
@@ -54,6 +55,10 @@ MEDIUM SCREENS
 
     .history img{
         height : 50%;
+    }
+
+    .history li:hover img{
+        display: block;
     }
     /*----------------------*/
 
@@ -182,10 +187,15 @@ SMALL SCREENS
     }
     /*----------------------*/
 
-    /*==== history / hover effect > small screen ====*/
-    .history li:hover a{
+    /*==== history / touch effect > small screen ====*/
+    .history li.touched a{
         color: var(--work-primary-color);
     }
+
+    .history li.touched img{
+        display: block;
+    }
+    /*----------------------*/
 }
 
 

@@ -1,5 +1,16 @@
 /*
 #######################################################
+TOUCH
+#######################################################
+*/
+/* check if touch screen */
+const isTouch = ( 'ontouchstart' in window ) || 
+                ( navigator.maxTouchPoints > 0 ) ||
+                ( navigator.msMaxTouchPoints > 0 );
+
+
+/*
+#######################################################
 MENU
 #######################################################
 */
@@ -12,7 +23,6 @@ const menuItems = document.querySelectorAll('.menu-content > li > a');
 /* compute header delay */
 const menuStyle = getComputedStyle(menu);
 const headerDelay = 1000*0.8*parseFloat(menuStyle.getPropertyValue('--menu-overlay-duration')); 
-console.log(headerDelay);
 
 /* toggle on click */
 toggle.addEventListener('click', () => {
@@ -110,11 +120,11 @@ convertImages('img');
 SCROLL
 #######################################################
 */
+/*==== scroll > unlock items when visible ====*/
 /* watch locked items */
 const lockedItems =  document.querySelectorAll('.lock');
 
-/* use IntersectionObserver > 
-https://stackoverflow.com/a/62536793/5390321 */
+/* use IntersectionObserver > https://stackoverflow.com/a/62536793/5390321 */
 function onObserverChange(entries, observer)
 {
   entries.forEach(entry => {
@@ -133,10 +143,10 @@ function onObserverChange(entries, observer)
 }
 
 let options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.3
-  };
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3
+};
 
 let observer = new IntersectionObserver(onObserverChange, options);
 
@@ -144,16 +154,43 @@ lockedItems.forEach(lockedItem => {
     observer.observe(lockedItem);
 });
 
-/* toggle header shadow */
+/*==== scroll > on scroll ====*/
 window.onscroll = function() {
+  /* toggle header shadow */
   if(window.scrollY !== 0){
     if(!header.classList.contains('shadow')){
       header.classList.add('shadow');
     }
-    }else{
-      header.classList.remove('shadow');
-    }
+  }else{
+    header.classList.remove('shadow');
+  }
 };
+
+/*==== scroll > disable snap for Chrome ====*/
+/* condition from here > https://stackoverflow.com/questions/4565112 */
+var isChromium = window.chrome;
+var winNav = window.navigator;
+var vendorName = winNav.vendor;
+var isOpera = typeof window.opr !== "undefined";
+var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+var isIOSChrome = winNav.userAgent.match("CriOS");
+
+if(
+  isIOSChrome ||
+  (isChromium !== null &&
+  typeof isChromium !== "undefined" &&
+  vendorName === "Google Inc." &&
+  isOpera === false &&
+  isIEedge === false) 
+){
+  /* is Chrome */
+  /* console.log('is chrome'); */
+  document.getElementsByTagName('html')[0].
+  setAttribute("style"," scroll-snap-type: none;")
+} else { 
+  /* not Chrome */
+  /* console.log('not chrome'); */
+}
 
 
 /*
@@ -325,39 +362,79 @@ HISTORY
 /* get history items*/
 const historyItems = document.querySelectorAll('.history > li > a');
 
-/* display preview image when hovering */
-historyItems.forEach(historyItem => {
-  historyItem.addEventListener('mousemove', e => {
-    var xOffset = 30;
-    var yOffset = 30;
+/* update preview position */
+function updatePreview(e,previewImg,previewParent){
+  var xOffset = 30;
+  var yOffset = 30;
 
+  if (!isTouch){
     var x0 = e.clientX;
     var y0 = e.clientY;
+  } else {
+    var x0 = e.touches[0].clientX;
+    var y0 = e.touches[0].clientY;
+  }
+  
+  var previewHeight = previewImg.offsetHeight;
+  var previewWidth = previewImg.offsetWidth;
 
-    var previewId = historyItem.getAttribute('data-id');
-    var previewImg = document.querySelector(previewId + ' > img');
-    var previewParent = document.querySelector(previewId);
-    
-    var previewHeight = previewImg.offsetHeight;
-    var previewWidth = previewImg.offsetWidth;
+  var previewRight = previewParent.classList.contains('right');
+  var previewLeft = previewParent.classList.contains('left');
 
-    const previewRight = previewParent.classList.contains('right');
-    const previewLeft = previewParent.classList.contains('left');
+  var viewportWidth = document.documentElement.clientWidth;
 
-    var viewportWidth = document.documentElement.clientWidth;
+  
+  if (isTouch){
+    var x = viewportWidth/2 - previewWidth/2;
+    var y = y0 + yOffset;
+  }
+  else if (viewportWidth < 600){
+    var x = viewportWidth/2 - previewWidth/2;
+    var y = y0 + yOffset;
+  } else if (previewLeft){
+    var x = x0 + xOffset;
+    var y = y0 + yOffset;
+  } else if (previewRight) {
+    var x = x0 - previewWidth - xOffset;
+    var y = y0 + yOffset;
+  } else {
+    var x = x0 - previewWidth/2;
+    var y = y0 + yOffset;
+  }
+  previewImg.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
+}
 
-    if (viewportWidth < 600){
-      var x = viewportWidth/2 - previewWidth/2;
-      var y = y0 + yOffset;
-    } else if (previewLeft){
-      var x = x0 + xOffset;
-      var y = y0 + yOffset;
-    } else if (previewRight) {
-      var x = x0 - previewWidth - xOffset;
-      var y = y0 + yOffset;
-    } else {
-      var y = y0 - previewHeight/2;
+/* update preview parent class list  */
+function removeTouched(element){
+  if (element.classList.contains('touched')){
+    element.classList.remove('touched');
+  } 
+}
+
+/* display preview image when hovering */
+historyItems.forEach(historyItem => {
+  var previewId = historyItem.getAttribute('data-id');
+  var previewImg = document.querySelector(previewId + ' > img');
+  var previewParent = document.querySelector(previewId);
+
+  historyItem.addEventListener('mousemove', e => {
+    if (!isTouch){
+      updatePreview(e,previewImg,previewParent);
     }
-    previewImg.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
+  })
+
+  historyItem.addEventListener('touchstart', e => {
+    if (!previewParent.classList.contains('touched')){
+      previewParent.classList.add('touched');
+      updatePreview(e,previewImg,previewParent);
+    }
+  })
+
+  historyItem.addEventListener('touchend', e => {  
+    removeTouched(previewParent);
+  })
+
+  historyItem.addEventListener('touchcancel', e => {    
+    removeTouched(previewParent);
   })
 })
