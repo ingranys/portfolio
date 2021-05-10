@@ -25,6 +25,15 @@ const menuStyle = getComputedStyle(menu);
 const headerDelay = 1000*0.8*parseFloat(menuStyle.
                       getPropertyValue('--menu-overlay-duration')); 
 
+/* disable/enable scroll */
+function toggleScroll(){
+  if (document.body.style.overflow === ''){
+    document.body.style.overflow = 'hidden';
+  } else if (document.body.style.overflow === 'hidden') {
+    document.body.style.overflow = '';
+  }  
+}
+
 /* toggle on click */
 toggle.addEventListener('click', () => {
 
@@ -39,11 +48,7 @@ toggle.addEventListener('click', () => {
     header.classList.add('active');
   }
 
-  if (document.body.style.overflow === ''){
-    document.body.style.overflow = 'hidden';
-  } else if (document.body.style.overflow === 'hidden') {
-    document.body.style.overflow = '';
-  }  
+  toggleScroll();
 })
 
 /* scroll to section on click */
@@ -51,12 +56,18 @@ menuItems.forEach(menuItem => {
   menuItem.addEventListener('click', (event) => {
     let anchor = menuItem.getAttribute('data-text');
 
+    if (toggle.classList.contains('active')) {
+      toggle.classList.remove('active');
+    }
+
     if (menu.classList.contains('active')) {
       menu.classList.remove('active');
     }
     if (header.classList.contains('active')) {
       header.classList.remove('active');
     }
+
+    toggleScroll();
     
     setTimeout(function(){
       /*document.location.hash = '#' + anchor.toString();*/
