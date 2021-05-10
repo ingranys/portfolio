@@ -10,8 +10,9 @@ const header = document.querySelector('.header');
 const menuItems = document.querySelectorAll('.menu-content > li > a');
 
 /* compute header delay */
-const style = getComputedStyle(document.body);
-const headerDelay = 1000*0.8*parseFloat(style.getPropertyValue('--menu-reveal-duration')); 
+const menuStyle = getComputedStyle(menu);
+const headerDelay = 1000*0.8*parseFloat(menuStyle.getPropertyValue('--menu-overlay-duration')); 
+console.log(headerDelay);
 
 /* toggle on click */
 toggle.addEventListener('click', () => {
@@ -109,6 +110,9 @@ convertImages('img');
 SCROLL
 #######################################################
 */
+/* watch locked items */
+const lockedItems =  document.querySelectorAll('.lock');
+
 /* use IntersectionObserver > 
 https://stackoverflow.com/a/62536793/5390321 */
 function onObserverChange(entries, observer)
@@ -136,8 +140,8 @@ let options = {
 
 let observer = new IntersectionObserver(onObserverChange, options);
 
-cards.forEach(card => {
-    observer.observe(card);
+lockedItems.forEach(lockedItem => {
+    observer.observe(lockedItem);
 });
 
 /* toggle header shadow */
@@ -256,6 +260,65 @@ var typed = new Typed('#typed', {
 
 /*
 #######################################################
+CARDS
+#######################################################
+*/
+/* get cards */
+const cards = document.querySelectorAll('.flip-card');
+
+/* on click */
+cards.forEach(card => {
+    card.addEventListener('click', () => {
+        if (card.classList.contains('ready') && card.classList.contains('toback') ){
+            card.classList.remove('ready','toback');
+            card.classList.add('tofront');
+        } else if (card.classList.contains('ready')) {
+            card.classList.add('toback');        
+        } else if (card.classList.contains('toback')) {
+            card.classList.remove('toback');
+            card.classList.add('tofront');
+        } else if (card.classList.contains('tofront')) {
+            card.classList.remove('tofront');
+            card.classList.add('toback');
+        }
+    });
+});
+
+/* on mouseleave */
+cards.forEach(card => {
+    card.addEventListener('mouseleave', () => {
+
+        if (card.classList.contains('tofront')) {
+            card.classList.remove('tofront'); 
+            card.classList.add('ready'); 
+        } else if (card.classList.contains('ready') && card.classList.contains('toback')) {
+            card.classList.remove('toback'); 
+            card.classList.add('tofront');   
+        } else if (card.classList.contains('toback')) {
+            card.classList.remove('toback'); 
+            card.classList.add('ready','tofront');      
+        }     
+    });
+});
+
+/* on mouseenter */
+cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+
+        if (card.classList.contains('tofront')) {
+            card.classList.remove('tofront'); 
+        }  
+        
+        if (card.classList.contains('init')) {
+            card.classList.remove('init'); 
+            card.classList.add('ready'); 
+        }  
+    });
+});
+
+
+/*
+#######################################################
 HISTORY
 #######################################################
 */
@@ -298,4 +361,3 @@ historyItems.forEach(historyItem => {
     previewImg.setAttribute("style", "top: "+y+"px; left: "+x+"px;");
   })
 })
-
