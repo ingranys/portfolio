@@ -2,13 +2,18 @@
 (A) Adapter la taille de police en fonction de l'écran @body #responsive
 (A) Ajouter marge adapative gauche à tous les titres @body #responsive
 (A) Ajouter des animations SVG en arrière-plan @body #effet
-(B) Modifier le barre de déroulement @body #style {cm:2021-05-05}
+(A) Ajouter une animation de bievenue pendant le chargement @body #effet
 (B) Nettoyer code @body #code
+(B) Gérer le chargement des images svg @body 
+(B) Adapter la taille des photos en fonction de la taille de l'écran @body #responsive
+(B) Modifier le barre de déroulement @body #style {cm:2021-05-05}
 (C) Ajouter commentaires pour les fichiers javascript @body #code
 (C) Rechercher une nouvelle police @body #style
 (C) Retoucher logo @body #style {cm:2021-05-09}
+(C) Retirer le snap sur chrome @body #responsive {cm:2021-05-10}
 (D) Ajouter le défilement par saut "snap" @body #effet {cm:2021-05-05}
 (D) Ajouter un fichier de style pour les paramètres @body #code {cm:2021-05-07}
+(D) Ajouter la détection des écran tactiles @body #responsive {cm:2021-05-10}
 
 # Header 
 (B) Adapter le padding .header en fonction de la taille d'écran @header #responsive
@@ -19,7 +24,9 @@
 
 # Menu
 (B) Adapter le padding et le margin .menu-socials en fonction de la taille d'écran @menu
+(B) Retirer la classe .active à partir de la fonction intersect @menu
 (B) Ajouter redirection vers section @menu #effet {cm:2021-05-02}
+(C) Empêcher de scroll lorsque le menu est actif @menu {cm:2021-05-10}
 (C) Retoucher les icônes sociaux @menu {cm:2021-05-09}
 (D) Corriger le défilement du menu @menu #effet {cm:2021-05-05}
 (D) Modifier l'adresse mail sur l'icône mail @menu  {cm:2021-05-05}
@@ -32,11 +39,14 @@
 (D) Réparer le message en console pour typed.js @home {cm:2021-05-09}
 
 # Work
-(A) Ajouter effet :hover pour les sociétés @work #effet
+(A) Ajouter effet :hover pour les sociétés @work #effet {cm:2021-05-09}
 (B) Adapter le padding .work-grid en fonction de la taille d'écran @work
 (B) Ajouter section "I worked there" @work #section {cm:2021-05-09}
-(B) Ajouter arrivée par le côté pour le sociétés @work #effet
+(B) Ajouter arrivée par le côté pour le sociétés @work #effet {cm:2021-05-09}
 (C) Ajouter schéma sur les .flip-card @work
+(C) Ajouter l'activation par touch pour les cards pour écran tactile @work #responsive
+(C) Éliminer le temps de chargement des images "history" @work {cm:2021-05-10}
+(C) Corriger l'effet over sur la partie "I worked there" pour écran tactile @work #responsive {cm:2021-05-10}
 (C) Ajouter effet :hover sur learn more @work #effet {cm:2021-05-02}
 (C) Adapater taille grille pour les tailles d'écran @work #responsive {cm:2021-05-09}
 (C) Reporter les paramètres dans le fichier variables.css @work #code {cm:2021-05-09}
