@@ -22,13 +22,14 @@ const menuItems = document.querySelectorAll('.menu-content > li > a');
 
 /* compute header delay */
 const menuStyle = getComputedStyle(menu);
-const headerDelay = 1000*0.8*parseFloat(menuStyle.getPropertyValue('--menu-overlay-duration')); 
+const headerDelay = 1000*0.8*parseFloat(menuStyle.
+                      getPropertyValue('--menu-overlay-duration')); 
 
 /* toggle on click */
 toggle.addEventListener('click', () => {
 
-  menu.classList.toggle('active');
   toggle.classList.toggle('active');
+  menu.classList.toggle('active');
 
   if (header.classList.contains('active')){
     setTimeout(function(){
@@ -37,6 +38,12 @@ toggle.addEventListener('click', () => {
   } else {
     header.classList.add('active');
   }
+
+  if (document.body.style.overflow === ''){
+    document.body.style.overflow = 'hidden';
+  } else if (document.body.style.overflow === 'hidden') {
+    document.body.style.overflow = '';
+  }  
 })
 
 /* scroll to section on click */
